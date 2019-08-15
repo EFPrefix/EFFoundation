@@ -16,8 +16,4 @@ public extension UIViewController {
         }
         return recentVC.view
     }
-
-    func hideKeyboard() {
-        UIApplication.shared.keyWindow?.endEditing(true)
-    }
 }
