@@ -9,7 +9,7 @@ import Foundation
 
 public extension UIViewController {
 
-    var topView: UIView {
+    var zTopView: UIView {
         var recentVC = self
         while let parentVC = recentVC.parent {
             recentVC = parentVC

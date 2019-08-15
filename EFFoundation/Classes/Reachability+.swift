@@ -19,15 +19,22 @@ public enum NetworkType {
     case wwan4g
     case unknownTechnology(name: String)
 
-    var trackingId: String {
+    public var trackingId: String {
         switch self {
-        case .unknown:                      return "Unknown"
-        case .noConnection:                 return "No Connection"
-        case .wifi:                         return "WiFi"
-        case .wwan2g:                       return "2G"
-        case .wwan3g:                       return "3G"
-        case .wwan4g:                       return "4G"
-        case .unknownTechnology(let name):  return "Unknown Technology: \"\(name)\""
+        case .unknown:
+            return "Unknown"
+        case .noConnection:
+            return "No Connection"
+        case .wifi:
+            return "WiFi"
+        case .wwan2g:
+            return "2G"
+        case .wwan3g:
+            return "3G"
+        case .wwan4g:
+            return "4G"
+        case .unknownTechnology(let name):
+            return "Unknown Technology: \"\(name)\""
         }
     }
 }
@@ -44,14 +51,14 @@ public extension Reachability {
             case .wifi:
                 return .wifi
             case .cellular:
-                return Reachability.getWWANNetworkType
+                return Reachability.wwanNetworkType
             }
         } catch {
             return .unknown
         }
     }
 
-    static var getWWANNetworkType: NetworkType {
+    static var wwanNetworkType: NetworkType {
         guard let currentRadioAccessTechnology = CTTelephonyNetworkInfo().currentRadioAccessTechnology else { return .unknown }
         switch currentRadioAccessTechnology {
         case CTRadioAccessTechnologyGPRS,
@@ -73,7 +80,7 @@ public extension Reachability {
         }
     }
 
-    static var getIPAddresses: String? {
+    static var ipAddresses: String? {
         var addresses: [String] = [String]()
 
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
