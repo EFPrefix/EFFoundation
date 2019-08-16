@@ -1,6 +1,6 @@
 {
   "name": "EFFoundation",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "summary": "EFFoundation.",
   "description": "EFFoundation.",
   "homepage": "https://github.com/EFPrefix/EFFoundation",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/EFPrefix/EFFoundation.git",
-    "tag": "0.1.0"
+    "tag": "0.3.0"
   },
   "social_media_url": "https://twitter.com/EyreFree777",
   "platforms": {
@@ -30,6 +30,9 @@
     ],
     "ReachabilitySwift": [
       ">= 4.3.1"
+    ],
+    "SwiftyAttributes": [
+      ">= 5.1.1"
     ]
   }
 }

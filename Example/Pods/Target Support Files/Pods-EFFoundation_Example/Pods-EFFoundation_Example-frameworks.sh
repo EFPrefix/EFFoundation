@@ -164,11 +164,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EFFoundation/EFFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EFFoundation/EFFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

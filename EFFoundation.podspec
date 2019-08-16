@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '0.2.1'
+  s.version          = '0.3.0'
   s.summary          = 'EFFoundation.'
 
   s.description      = <<-DESC
@@ -24,6 +24,8 @@ EFFoundation.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
+  
   s.dependency 'DeviceKit', '>= 2.0.0'
   s.dependency 'ReachabilitySwift', '>= 4.3.1'
+  s.dependency 'SwiftyAttributes', '>= 5.1.1'
 end
