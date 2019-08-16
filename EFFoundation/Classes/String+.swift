@@ -9,6 +9,14 @@ import Foundation
 
 public extension String {
 
+    var attributedString: NSAttributedString {
+        return NSAttributedString(string: self)
+    }
+
+    var mutableAttributedString: NSMutableAttributedString {
+        return NSMutableAttributedString(string: self)
+    }
+
     var bool: Bool? {
         switch self.lowercased() {
         case "true":
