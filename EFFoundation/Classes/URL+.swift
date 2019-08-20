@@ -38,7 +38,7 @@ public extension URL {
 
     func addQueryParameter(key: String, value: String) -> URL {
         if let paramString = self.absoluteString.components(separatedBy: "?").last {
-            let testBaseURL: String = "https://www.baidu.com"
+            let testBaseURL: String = "https://www.efqrcode.com"
             if let url = URL(unexpectedString: "\(testBaseURL)?\(paramString)") {
                 var queryParameters = url.queryParameters ?? [String: String]()
 

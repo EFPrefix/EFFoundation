@@ -1,13 +1,13 @@
 //
-//  Int+.swift
-//  DeviceKit
+//  BinaryFloatingPoint+.swift
+//  EFFoundation
 //
-//  Created by EyreFree on 2019/8/14.
+//  Created by EyreFree on 2019/8/20.
 //
 
 import UIKit
 
-public extension FixedWidthInteger {
+public extension BinaryFloatingPoint {
 
     var bool: Bool {
         return 0 != self

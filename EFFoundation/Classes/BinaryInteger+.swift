@@ -1,13 +1,13 @@
 //
-//  Float+.swift
-//  DeviceKit
+//  BinaryInteger+.swift
+//  EFFoundation
 //
 //  Created by EyreFree on 2019/8/14.
 //
 
-import Foundation
+import UIKit
 
-public extension Float {
+public extension BinaryInteger {
 
     var bool: Bool {
         return 0 != self
@@ -19,6 +19,18 @@ public extension Float {
 
     var double: Double {
         return Double(self)
+    }
+
+    var float: Float {
+        return Float(self)
+    }
+
+    var string: String {
+        return "\(self)"
+    }
+
+    var count: Int {
+        return string.count
     }
 
     var int: Int {
