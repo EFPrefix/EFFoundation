@@ -10,7 +10,8 @@ import SwiftyAttributes
 
 public extension NSMutableAttributedString {
 
-    private func updateAttributes(_ attributes: [Attribute], range: NSRange? = nil) -> NSMutableAttributedString {
+    @discardableResult
+    func updateAttributes(_ attributes: [Attribute], range: NSRange? = nil) -> NSMutableAttributedString {
         let range: NSRange = range ?? NSRange(location: 0, length: self.string.count)
         self.addAttributes(attributes, range: range)
         return self

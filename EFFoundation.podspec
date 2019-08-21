@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '0.4.0'
+  s.version          = '0.5.0'
   s.summary          = 'EFFoundation.'
 
   s.description      = <<-DESC
@@ -14,6 +14,7 @@ EFFoundation.
   s.source           = { :git => 'https://github.com/EFPrefix/EFFoundation.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/EyreFree777'
 
+  s.swift_version = '5.0'
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'EFFoundation/Classes/**/*'

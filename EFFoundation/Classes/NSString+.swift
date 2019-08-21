@@ -9,10 +9,6 @@ import Foundation
 
 public extension NSString {
 
-    var isEmpty: Bool {
-        return string.isEmpty
-    }
-
     var string: String {
         return self as String
     }

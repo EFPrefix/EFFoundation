@@ -2,6 +2,12 @@
 
 -----
 
+## [0.5.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.5.0) (2019-08-21)
+
+- Fix.
+
+---
+
 ## [0.4.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.4.0) (2019-08-20)
 
 - Add extension for `BinaryFloatingPoint`;

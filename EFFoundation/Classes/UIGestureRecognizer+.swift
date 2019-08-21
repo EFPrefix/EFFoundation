@@ -11,7 +11,7 @@ fileprivate struct AssociatedObjectKeys {
     static var gestureRecognizerBlockKey: String = "gestureRecognizerBlockKey"
 }
 
-extension UIGestureRecognizer {
+public extension UIGestureRecognizer {
 
     private var gestureRecognizerBlock: ((UIGestureRecognizer) -> Void)? {
         get {
@@ -22,8 +22,16 @@ extension UIGestureRecognizer {
         }
     }
 
-    public convenience init(_ action: ((UIGestureRecognizer) -> Void)?) {
+    convenience init(_ action: ((UIGestureRecognizer) -> Void)?) {
         self.init()
+        addAction(action)
+    }
+
+    @objc private func callGestureRecognizerBlock() {
+        gestureRecognizerBlock?(self)
+    }
+
+    func addAction(_ action: ((UIGestureRecognizer) -> Void)?) {
         gestureRecognizerBlock = action
         if nil == action {
             removeTarget(self, action: #selector(callGestureRecognizerBlock))
@@ -32,7 +40,7 @@ extension UIGestureRecognizer {
         }
     }
 
-    @objc private func callGestureRecognizerBlock() {
-        gestureRecognizerBlock?(self)
+    func removeAction() {
+        addAction(nil)
     }
 }

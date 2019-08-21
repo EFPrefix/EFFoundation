@@ -17,6 +17,10 @@ public extension String {
         return NSMutableAttributedString(string: self)
     }
 
+    var nsString: NSString {
+        return self as NSString
+    }
+
     var bool: Bool? {
         switch self.lowercased() {
         case "true":

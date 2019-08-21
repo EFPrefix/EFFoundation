@@ -15,6 +15,6 @@ public func printLog<T>(_ message: T, file: String = #file, method: String = #fu
     #endif
 }
 
-func hideKeyboard() {
+public func hideKeyboard() {
     UIApplication.shared.keyWindow?.endEditing(true)
 }

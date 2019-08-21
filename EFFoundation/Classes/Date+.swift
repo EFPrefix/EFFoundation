@@ -13,6 +13,22 @@ public extension Date {
         return Calendar.current.isDateInToday(self)
     }
 
+    var isThisWeek: Bool {
+        guard isThisYear else { return false }
+        let calendar = Calendar.current
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: Date())
+        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: self)
+        return nowCmps.weekOfYear == selfCmps.weekOfYear
+    }
+
+    var isThisMonth: Bool {
+        guard isThisYear else { return false }
+        let calendar = Calendar.current
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: Date())
+        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: self)
+        return nowCmps.month == selfCmps.month
+    }
+
     var isThisYear: Bool {
         let calendar = Calendar.current
         let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.year], from: Date())
