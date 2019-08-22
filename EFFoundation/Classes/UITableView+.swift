@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
     var currentSection: Int {
         if let indexPath = self.indexPathsForVisibleRows?.first {

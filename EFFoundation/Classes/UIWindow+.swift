@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIWindow {
+public extension UIWindow {
 
     static var current: UIWindow? {
         return UIApplication.shared.delegate?.window as? UIWindow

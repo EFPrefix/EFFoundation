@@ -30,26 +30,4 @@ public extension CGRect {
             self = r
         }
     }
-    
-    var width: CGFloat {
-        get {
-            return self.size.width
-        }
-        set {
-            var r = self
-            r.size.width = newValue
-            self = r
-        }
-    }
-    
-    var height: CGFloat {
-        get {
-            return self.size.height
-        }
-        set {
-            var r = self
-            r.size.height = newValue
-            self = r
-        }
-    }
 }
