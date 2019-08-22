@@ -9,6 +9,16 @@ import UIKit
 
 public extension UIImage {
 
+    static let appIcon: UIImage? = {
+        if let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
+            let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
+            let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
+            let lastIcon = iconFiles.last {
+            return UIImage(named: lastIcon)
+        }
+        return nil
+    }()
+
     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         UIGraphicsBeginImageContext(size)
         let context: CGContext? = UIGraphicsGetCurrentContext()
@@ -43,5 +53,13 @@ public extension UIImage {
 
     func jpg(compressionQuality: CGFloat = 1) -> Data? {
         return self.jpegData(compressionQuality: compressionQuality)
+    }
+
+    func resize(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
