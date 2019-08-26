@@ -2,6 +2,12 @@
 
 -----
 
+## [0.6.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.6.0) (2019-08-26)
+
+- Fix.
+
+---
+
 ## [0.5.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.5.0) (2019-08-21)
 
 - Fix.

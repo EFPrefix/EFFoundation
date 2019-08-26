@@ -135,4 +135,17 @@ public extension String {
         }
         return randomString
     }
+
+    func dictionary(using: String.Encoding = String.Encoding.utf8) -> Any? {
+        if let data = self.data(using: using) {
+            do {
+                return try JSONSerialization.jsonObject(
+                    with: data, options: JSONSerialization.ReadingOptions.allowFragments
+                )
+            } catch {
+                printLog("JSONSerialization.jsonObject() Error!")
+            }
+        }
+        return nil
+    }
 }

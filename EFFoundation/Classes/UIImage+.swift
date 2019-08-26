@@ -62,4 +62,21 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return newImage
     }
+
+    func nine(insets: UIEdgeInsets? = nil) -> UIImage {
+        let insets: UIEdgeInsets? = insets ?? {
+            let width: CGFloat = self.size.width
+            let height: CGFloat = self.size.height
+            if width > 3 && height > 3 {
+                let hMargin: CGFloat = (width - 1) / 2
+                let vMargin: CGFloat = (height - 1) / 2
+                return UIEdgeInsets(top: vMargin, left: hMargin, bottom: vMargin, right: hMargin)
+            }
+            printLog("UIImage size too small!")
+            return nil
+            } (
+        )
+        guard let insetsV = insets else { return self }
+        return self.resizableImage(withCapInsets: insetsV, resizingMode: .stretch)
+    }
 }
