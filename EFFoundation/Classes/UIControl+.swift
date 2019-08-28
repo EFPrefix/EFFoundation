@@ -9,7 +9,7 @@ import UIKit
 
 public extension UIControl {
 
-    static var blockDict: [UInt: ((UIControl) -> Void)?] = [:]
+    private static var blockDict: [UInt: ((UIControl) -> Void)?] = [:]
 
     private func selectorFor(_ event: UIControl.Event) -> Selector? {
         switch event {
