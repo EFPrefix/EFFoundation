@@ -2,6 +2,12 @@
 
 -----
 
+## [0.7.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.7.1) (2019-08-28)
+
+- Support Carthage.
+
+---
+
 ## [0.7.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.7.0) (2019-08-28)
 
 - Support GIF.
