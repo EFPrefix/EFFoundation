@@ -1,0 +1,4 @@
+github "devicekit/DeviceKit" "2.0.0"
+github "ashleymills/Reachability.swift" "4.3.1"
+github "eddiekaiger/SwiftyAttributes" "v5.1.1"
+
