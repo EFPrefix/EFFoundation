@@ -2,6 +2,12 @@
 
 -----
 
+## [0.7.4](https://github.com/EFPrefix/EFFoundation/releases/tag/0.7.4) (2019-08-30)
+
+- Add dataGif.
+
+---
+
 ## [0.7.3](https://github.com/EFPrefix/EFFoundation/releases/tag/0.7.3) (2019-08-29)
 
 - Fix Carthage.
