@@ -82,14 +82,29 @@ public extension UIImage {
 }
 
 // GIF
+fileprivate struct AssociatedObjectKeys {
+    static var dataGifKey: String = "dataGifKey"
+}
+
 public extension UIImage {
+
+    var dataGif: Data? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedObjectKeys.dataGifKey) as? Data
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedObjectKeys.dataGifKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
 
     static func gif(data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             printLog("SwiftGif: Source for the image does not exist")
             return nil
         }
-        return UIImage.animatedImageWithSource(source)
+        let image: UIImage? = UIImage.animatedImageWithSource(source)
+        image?.dataGif = data
+        return image
     }
 
     static func gif(url: String) -> UIImage? {
