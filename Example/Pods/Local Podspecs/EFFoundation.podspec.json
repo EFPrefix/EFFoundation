@@ -20,21 +20,69 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "EFFoundation/Classes/**/*",
+  "default_subspecs": "Core",
   "frameworks": [
     "UIKit",
     "Foundation"
   ],
-  "dependencies": {
-    "DeviceKit": [
-      ">= 2.0.0"
-    ],
-    "ReachabilitySwift": [
-      ">= 4.3.1"
-    ],
-    "SwiftyAttributes": [
-      ">= 5.1.1"
-    ]
-  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "EFFoundation/Core/**/*"
+    },
+    {
+      "name": "Attributes",
+      "source_files": "EFFoundation/Attributes/**/*",
+      "dependencies": {
+        "EFFoundation/Core": [
+
+        ],
+        "SwiftyAttributes": [
+          ">= 5.1.1"
+        ]
+      }
+    },
+    {
+      "name": "Device",
+      "source_files": "EFFoundation/Device/**/*",
+      "dependencies": {
+        "EFFoundation/Core": [
+
+        ],
+        "DeviceKit": [
+          ">= 2.1.0"
+        ]
+      }
+    },
+    {
+      "name": "Reachability",
+      "source_files": "EFFoundation/Reachability/**/*",
+      "dependencies": {
+        "EFFoundation/Core": [
+
+        ],
+        "ReachabilitySwift": [
+          ">= 4.3.1"
+        ]
+      }
+    },
+    {
+      "name": "Complete",
+      "dependencies": {
+        "EFFoundation/Core": [
+
+        ],
+        "EFFoundation/Attributes": [
+
+        ],
+        "EFFoundation/Device": [
+
+        ],
+        "EFFoundation/Reachability": [
+
+        ]
+      }
+    }
+  ],
   "swift_version": "5.0"
 }

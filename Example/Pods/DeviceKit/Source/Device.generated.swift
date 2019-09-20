@@ -48,14 +48,18 @@ import UIKit
 ///
 public enum Device {
   #if os(iOS)
-    /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
+    /// Device is an [iPod touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
     case iPodTouch5
-    /// Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)
+    /// Device is an [iPod touch (6th generation)](https://support.apple.com/kb/SP720)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
     case iPodTouch6
+    /// Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png)
+    case iPodTouch7
     /// Device is an [iPhone 4](https://support.apple.com/kb/SP587)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
@@ -209,7 +213,7 @@ public enum Device {
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg)
     case homePod
   #elseif os(tvOS)
-    /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
+    /// Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
     case appleTV4
@@ -298,6 +302,7 @@ public enum Device {
       switch identifier {
       case "iPod5,1": return iPodTouch5
       case "iPod7,1": return iPodTouch6
+      case "iPod9,1": return iPodTouch7
       case "iPhone3,1", "iPhone3,2", "iPhone3,3": return iPhone4
       case "iPhone4,1": return iPhone4s
       case "iPhone5,1", "iPhone5,2": return iPhone5
@@ -386,6 +391,7 @@ public enum Device {
       switch self {
         case .iPodTouch5: return 4
         case .iPodTouch6: return 4
+        case .iPodTouch7: return 4
         case .iPhone4: return 3.5
         case .iPhone4s: return 3.5
         case .iPhone5: return 4
@@ -452,6 +458,7 @@ public enum Device {
       switch self {
       case .iPodTouch5: return (width: 9, height: 16)
       case .iPodTouch6: return (width: 9, height: 16)
+      case .iPodTouch7: return (width: 9, height: 16)
       case .iPhone4: return (width: 2, height: 3)
       case .iPhone4s: return (width: 2, height: 3)
       case .iPhone5: return (width: 9, height: 16)
@@ -516,7 +523,7 @@ public enum Device {
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
-      return [.iPodTouch5, .iPodTouch6]
+      return [.iPodTouch5, .iPodTouch6, .iPodTouch7]
     }
 
     /// All iPhones
@@ -617,11 +624,9 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      // TODO: Longterm we need a better solution for this!
-      guard self != .iPhoneX && self != .iPhoneXS else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
-        return UIScreen.main.nativeScale > 2.7
+        return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
@@ -672,6 +677,15 @@ public enum Device {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
     }
 
+    /// All devices that have 3D Touch support.
+    public static var allDevicesWith3dTouchSupport: [Device] {
+      return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+    }
+
+    /// Returns whether or not the device has 3D Touch support.
+    public var has3dTouchSupport: Bool {
+      return isOneOf(Device.allDevicesWith3dTouchSupport)
+    }
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
@@ -691,6 +705,16 @@ public enum Device {
     /// All simulator Watches
     public static var allSimulatorWatches: [Device] {
       return allWatches.map(Device.simulator)
+    }
+
+    /// All watches that have Force Touch support.
+    public static var allWatchesWithForceTouchSupport: [Device] {
+      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm]
+    }
+
+    /// Returns whether or not the device has Force Touch support.
+    public var hasForceTouchSupport: Bool {
+      return isOneOf(Device.allWatchesWithForceTouchSupport)
     }
   #endif
 
@@ -804,6 +828,7 @@ public enum Device {
     switch self {
       case .iPodTouch5: return 326
       case .iPodTouch6: return 326
+      case .iPodTouch7: return 326
       case .iPhone4: return 326
       case .iPhone4s: return 326
       case .iPhone5: return 326
@@ -895,8 +920,9 @@ extension Device: CustomStringConvertible {
   public var description: String {
     #if os(iOS)
       switch self {
-      case .iPodTouch5: return "iPod Touch 5"
-      case .iPodTouch6: return "iPod Touch 6"
+      case .iPodTouch5: return "iPod touch (5th generation)"
+      case .iPodTouch6: return "iPod touch (6th generation)"
+      case .iPodTouch7: return "iPod touch (7th generation)"
       case .iPhone4: return "iPhone 4"
       case .iPhone4s: return "iPhone 4s"
       case .iPhone5: return "iPhone 5"
@@ -955,7 +981,7 @@ extension Device: CustomStringConvertible {
       }
     #elseif os(tvOS)
       switch self {
-      case .appleTV4: return "Apple TV 4"
+      case .appleTV4: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
@@ -1189,5 +1215,138 @@ extension Device {
       return nil
     }
   }
+}
+#endif
+
+#if os(iOS)
+// MARK: - Apple Pencil
+extension Device {
+
+  /**
+    This option set describes the current Apple Pencils
+    - firstGeneration:  1st Generation Apple Pencil
+    - secondGeneration: 2nd Generation Apple Pencil
+   */
+  public struct ApplePencilSupport: OptionSet {
+
+    public var rawValue: UInt
+
+    public init(rawValue: UInt) {
+      self.rawValue = rawValue
+    }
+
+    public static let firstGeneration = ApplePencilSupport(rawValue: 0x01)
+    public static let secondGeneration = ApplePencilSupport(rawValue: 0x02)
+  }
+
+  /// All Apple Pencil Capable Devices
+  public static var allApplePencilCapableDevices: [Device] {
+    return [.iPad6, .iPadAir3, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+  }
+
+  /// Returns supported version of the Apple Pencil
+  public var applePencilSupport: ApplePencilSupport {
+    switch self {
+      case .iPad6: return .firstGeneration
+      case .iPadAir3: return .firstGeneration
+      case .iPadMini5: return .firstGeneration
+      case .iPadPro9Inch: return .firstGeneration
+      case .iPadPro12Inch: return .firstGeneration
+      case .iPadPro12Inch2: return .firstGeneration
+      case .iPadPro10Inch: return .firstGeneration
+      case .iPadPro11Inch: return .secondGeneration
+      case .iPadPro12Inch3: return .secondGeneration
+      default: return []
+    }
+  }
+}
+#endif
+
+#if os(iOS)
+// MARK: - Cameras
+extension Device {
+
+  public enum CameraTypes {
+    case normal
+    case telephoto
+  }
+
+  /// Returns an array of the types of cameras the device has
+  public var cameras: [CameraTypes] {
+    switch self {
+      case .iPodTouch5: return [.normal]
+      case .iPodTouch6: return [.normal]
+      case .iPodTouch7: return [.normal]
+      case .iPhone4: return [.normal]
+      case .iPhone4s: return [.normal]
+      case .iPhone5: return [.normal]
+      case .iPhone5c: return [.normal]
+      case .iPhone5s: return [.normal]
+      case .iPhone6: return [.normal]
+      case .iPhone6Plus: return [.normal]
+      case .iPhone6s: return [.normal]
+      case .iPhone6sPlus: return [.normal]
+      case .iPhone7: return [.normal]
+      case .iPhoneSE: return [.normal]
+      case .iPhone8: return [.normal]
+      case .iPhoneXR: return [.normal]
+      case .iPad2: return [.normal]
+      case .iPad3: return [.normal]
+      case .iPad4: return [.normal]
+      case .iPadAir: return [.normal]
+      case .iPadAir2: return [.normal]
+      case .iPad5: return [.normal]
+      case .iPad6: return [.normal]
+      case .iPadAir3: return [.normal]
+      case .iPadMini: return [.normal]
+      case .iPadMini2: return [.normal]
+      case .iPadMini3: return [.normal]
+      case .iPadMini4: return [.normal]
+      case .iPadMini5: return [.normal]
+      case .iPadPro9Inch: return [.normal]
+      case .iPadPro12Inch: return [.normal]
+      case .iPadPro12Inch2: return [.normal]
+      case .iPadPro10Inch: return [.normal]
+      case .iPadPro11Inch: return [.normal]
+      case .iPadPro12Inch3: return [.normal]
+      case .iPhone7Plus: return [.normal, .telephoto]
+      case .iPhone8Plus: return [.normal, .telephoto]
+      case .iPhoneX: return [.normal, .telephoto]
+      case .iPhoneXS: return [.normal, .telephoto]
+      case .iPhoneXSMax: return [.normal, .telephoto]
+      default: return []
+    }
+  }
+
+  /// All devices that feature a camera
+  public static var allDevicesWithCamera: [Device] {
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+  }
+
+  /// All devices that feature a normal camera
+  public static var allDevicesWithNormalCamera: [Device] {
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+  }
+
+  /// All devices that feature a telephoto camera
+  public static var allDevicesWithTelephotoCamera: [Device] {
+    return [.iPhone7Plus, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+  }
+
+  /// Returns whether or not the current device has a camera
+  public var hasCamera: Bool {
+    return !self.cameras.isEmpty
+  }
+
+  /// Returns whether or not the current device has a normal camera
+  public var hasNormalCamera: Bool {
+    return self.cameras.contains(.normal)
+  }
+
+  /// Returns whether or not the current device has a telephoto camera
+  public var hasTelephotoCamera: Bool {
+    return self.cameras.contains(.telephoto)
+  }
+
 }
 #endif

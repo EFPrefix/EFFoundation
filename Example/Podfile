@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'EFFoundation_Example' do
-  pod 'EFFoundation', :path => '../'
+  pod 'EFFoundation', :subspecs => ['Complete'], :path => '../'
 
   target 'EFFoundation_Tests' do
     inherit! :search_paths
