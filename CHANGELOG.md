@@ -2,6 +2,12 @@
 
 -----
 
+## [0.8.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.1) (2019-09-20)
+
+- Fix available.
+
+---
+
 ## [0.8.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.0) (2019-09-20)
 
 - Make subspecs.

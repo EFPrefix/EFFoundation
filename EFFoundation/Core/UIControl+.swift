@@ -33,8 +33,6 @@ public extension UIControl {
             return #selector(touchCancel)
         case .valueChanged:
             return #selector(valueChanged)
-        case .primaryActionTriggered:
-            return #selector(primaryActionTriggered)
         case .editingDidBegin:
             return #selector(editingDidBegin)
         case .editingChanged:
@@ -54,6 +52,11 @@ public extension UIControl {
         case .allEvents:
             return #selector(allEvents)
         default:
+            if #available(iOS 9, *) {
+                if event == .primaryActionTriggered {
+                    return #selector(primaryActionTriggered)
+                }
+            }
             return nil
         }
     }
@@ -102,6 +105,7 @@ public extension UIControl {
         callActionFor(UIControl.Event.valueChanged)
     }
 
+    @available(iOS 9.0, *)
     @objc private func primaryActionTriggered() {
         callActionFor(UIControl.Event.primaryActionTriggered)
     }
@@ -196,6 +200,7 @@ public extension UIControl {
         addEventHandler(UIControl.Event.valueChanged, action: action)
     }
 
+    @available(iOS 9.0, *)
     func addPrimaryActionTriggeredHandler(_ action: ((UIControl) -> Void)?) {
         addEventHandler(UIControl.Event.primaryActionTriggered, action: action)
     }

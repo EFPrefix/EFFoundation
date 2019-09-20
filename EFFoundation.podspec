@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFFoundation'
-    s.version          = '0.8.0'
+    s.version          = '0.8.1'
     s.summary          = 'EFFoundation.'
     
     s.description      = <<-DESC
@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
     s.social_media_url = 'https://twitter.com/EyreFree777'
     
     s.swift_version = '5.0'
-    s.ios.deployment_target = '9.0'
     s.default_subspec = 'Core'
     s.frameworks = 'UIKit', 'Foundation'
-    
+    s.ios.deployment_target = '8.0'
+
     s.subspec 'Core' do |core|
         core.source_files = 'EFFoundation/Core/**/*'
     end
