@@ -2,6 +2,12 @@
 
 -----
 
+## [0.8.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.0) (2019-09-20)
+
+- Make subspecs.
+
+---
+
 ## [0.7.4](https://github.com/EFPrefix/EFFoundation/releases/tag/0.7.4) (2019-08-30)
 
 - Add dataGif.
