@@ -2,6 +2,12 @@
 
 -----
 
+## [0.8.2](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.2) (2019-09-20)
+
+- Fix import.
+
+---
+
 ## [0.8.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.1) (2019-09-20)
 
 - Fix available.

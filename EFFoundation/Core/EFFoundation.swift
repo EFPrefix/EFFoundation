@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
