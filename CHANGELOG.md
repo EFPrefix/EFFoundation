@@ -2,6 +2,12 @@
 
 -----
 
+## [0.9.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.0) (2019-09-24)
+
+- Remove `count` and `string`.
+
+---
+
 ## [0.8.2](https://github.com/EFPrefix/EFFoundation/releases/tag/0.8.2) (2019-09-20)
 
 - Fix import.

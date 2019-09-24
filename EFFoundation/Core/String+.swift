@@ -5,7 +5,7 @@
 //  Created by EyreFree on 2019/8/14.
 //
 
-import Foundation
+import UIKit
 
 public extension String {
 
@@ -84,6 +84,9 @@ public extension String {
     var uInt64: UInt64? {
         return UInt64(self)
     }
+}
+
+public extension String {
 
     var clean: String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

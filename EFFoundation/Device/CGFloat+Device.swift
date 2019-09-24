@@ -10,6 +10,7 @@ import UIKit
 public extension CGFloat {
 
     static let statusBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 44 : 20
+    static let statusBarAndNavigationBarHeight: CGFloat = statusBarHeight + navigationBarHeight
     static let bottomSafeAreaHeight: CGFloat = UIDevice.isiPhoneXSeries ? 34 : 0
     static let tabBarHeight: CGFloat = bottomSafeAreaHeight + 55
 }

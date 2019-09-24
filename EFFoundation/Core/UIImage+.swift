@@ -6,6 +6,19 @@
 //
 
 import UIKit
+import CoreGraphics
+import CoreImage
+
+public extension UIImage {
+
+    func ciImage() -> CIImage? {
+        return ciImage ?? CIImage(image: self)
+    }
+
+    func cgImage() -> CGImage? {
+        return cgImage ?? ciImage()?.cgImage()
+    }
+}
 
 public extension UIImage {
 

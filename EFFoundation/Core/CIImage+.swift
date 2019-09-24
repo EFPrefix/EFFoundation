@@ -19,7 +19,7 @@ public extension CIImage {
         return CIContext().createCGImage(self, from: extent)
     }
 
-    var uiImage: UIImage {
+    func uiImage() -> UIImage {
         return UIImage(ciImage: self)
     }
 }

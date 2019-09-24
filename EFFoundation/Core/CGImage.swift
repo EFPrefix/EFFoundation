@@ -5,17 +5,17 @@
 //  Created by EyreFree on 2019/8/28.
 //
 
-import Foundation
+import UIKit
 import CoreGraphics
 import CoreImage
 
 public extension CGImage {
 
-    var ciImage: CIImage {
+    func ciImage() -> CIImage {
         return CIImage(cgImage: self)
     }
 
-    var uiImage: UIImage {
+    func uiImage() -> UIImage {
         return UIImage(cgImage: self)
     }
 }

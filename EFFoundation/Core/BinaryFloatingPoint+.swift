@@ -25,14 +25,6 @@ public extension BinaryFloatingPoint {
         return Float(self)
     }
 
-    var string: String {
-        return "\(self)"
-    }
-
-    var count: Int {
-        return string.count
-    }
-
     var int: Int {
         return Int(self)
     }

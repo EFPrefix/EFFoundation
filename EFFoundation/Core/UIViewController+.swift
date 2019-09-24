@@ -5,7 +5,7 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-import Foundation
+import UIKit
 
 public extension UIViewController {
 
