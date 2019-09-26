@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UINavigationController {
@@ -16,3 +17,4 @@ public extension UINavigationController {
         CATransaction.commit()
     }
 }
+#endif

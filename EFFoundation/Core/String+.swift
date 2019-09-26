@@ -5,7 +5,8 @@
 //  Created by EyreFree on 2019/8/14.
 //
 
-import UIKit
+import Foundation
+import CoreGraphics
 
 public extension String {
 

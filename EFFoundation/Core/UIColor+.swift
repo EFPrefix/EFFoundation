@@ -5,7 +5,9 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
+import CoreGraphics
 
 public extension UIColor {
 
@@ -26,3 +28,4 @@ public extension UIColor {
         self.init(hexRGB: hex, alpha: alpha)
     }
 }
+#endif

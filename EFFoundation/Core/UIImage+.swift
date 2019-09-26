@@ -5,9 +5,12 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-import UIKit
+#if os(iOS)
 import CoreGraphics
 import CoreImage
+
+import UIKit
+import ImageIO
 
 public extension UIImage {
 
@@ -239,3 +242,4 @@ public extension UIImage {
         return animation
     }
 }
+#endif

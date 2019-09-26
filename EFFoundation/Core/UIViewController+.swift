@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIViewController {
@@ -17,3 +18,4 @@ public extension UIViewController {
         return recentVC.view
     }
 }
+#endif

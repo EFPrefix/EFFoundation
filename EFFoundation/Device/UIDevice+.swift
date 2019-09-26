@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/14.
 //
 
+#if os(iOS)
 import UIKit
 import DeviceKit
 
@@ -37,3 +38,4 @@ public extension UIDevice {
         return result
     }()
 }
+#endif

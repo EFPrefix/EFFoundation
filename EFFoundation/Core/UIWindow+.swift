@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/22.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIWindow {
@@ -13,3 +14,4 @@ public extension UIWindow {
         return UIApplication.shared.delegate?.window as? UIWindow
     }
 }
+#endif

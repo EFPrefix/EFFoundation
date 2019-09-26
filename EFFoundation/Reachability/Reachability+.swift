@@ -5,7 +5,8 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-import UIKit
+#if os(iOS)
+import Foundation
 import Reachability
 import CoreTelephony
 
@@ -106,3 +107,4 @@ public extension Reachability {
         return addresses.first
     }
 }
+#endif

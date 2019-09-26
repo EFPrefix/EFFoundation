@@ -5,7 +5,9 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
+import CoreGraphics
 
 public extension UIFont {
 
@@ -42,3 +44,4 @@ public extension UIFont {
         return UIFont.init(name: "PingFangSC-BoldItalic", size: ofSize) ?? UIFont.pingFangSCBold(ofSize: ofSize)
     }
 }
+#endif

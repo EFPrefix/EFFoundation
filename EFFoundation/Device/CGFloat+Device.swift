@@ -5,6 +5,8 @@
 //  Created by EyreFree on 2019/8/14.
 //
 
+#if os(iOS)
+import CoreGraphics
 import UIKit
 
 public extension CGFloat {
@@ -14,3 +16,4 @@ public extension CGFloat {
     static let bottomSafeAreaHeight: CGFloat = UIDevice.isiPhoneXSeries ? 34 : 0
     static let tabBarHeight: CGFloat = bottomSafeAreaHeight + 55
 }
+#endif

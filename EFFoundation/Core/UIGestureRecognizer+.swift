@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/20.
 //
 
+#if os(iOS)
 import UIKit
 
 fileprivate struct AssociatedObjectKeys {
@@ -44,3 +45,4 @@ public extension UIGestureRecognizer {
         addAction(nil)
     }
 }
+#endif

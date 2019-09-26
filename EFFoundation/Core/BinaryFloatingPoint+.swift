@@ -5,7 +5,8 @@
 //  Created by EyreFree on 2019/8/20.
 //
 
-import UIKit
+import Foundation
+import CoreGraphics
 
 public extension BinaryFloatingPoint {
 

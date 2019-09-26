@@ -6,7 +6,10 @@
 //
 
 import Foundation
+
+#if os(iOS)
 import UIKit
+#endif
 
 public func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
@@ -16,6 +19,8 @@ public func printLog<T>(_ message: T, file: String = #file, method: String = #fu
     #endif
 }
 
+#if os(iOS)
 public func hideKeyboard() {
     UIApplication.shared.keyWindow?.endEditing(true)
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIControl {
@@ -241,3 +242,4 @@ public extension UIControl {
         addEventHandler(UIControl.Event.allEvents, action: action)
     }
 }
+#endif
