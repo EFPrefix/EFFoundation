@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '0.9.1'
+  s.version          = '0.9.2'
   s.summary          = 'EFFoundation.'
   
   s.description      = <<-DESC
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
     
     device.source_files = 'EFFoundation/Device/**/*'
     device.dependency 'EFFoundation/Core'
-    device.dependency 'DeviceKit', '>= 2.1.0'
+    device.dependency 'DeviceKit', '>= 2.2.0'
   end
   
   s.subspec 'Reachability' do |reachability|

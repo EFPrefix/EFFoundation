@@ -2,6 +2,12 @@
 
 -----
 
+## [0.9.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.1) (2019-09-28)
+
+- Add support for the new September 2019 devices.
+
+---
+
 ## [0.9.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.0) (2019-09-24)
 
 - Remove `count` and `string`.

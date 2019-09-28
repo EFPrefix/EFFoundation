@@ -23,17 +23,8 @@ public extension UIDevice {
             return result
         }
 
-        let iPhoneXSeries: [Device] = [
-            Device.iPhoneX,
-            Device.iPhoneXR,
-            Device.iPhoneXS,
-            Device.iPhoneXSMax,
-            Device.simulator(Device.iPhoneX),
-            Device.simulator(Device.iPhoneXR),
-            Device.simulator(Device.iPhoneXS),
-            Device.simulator(Device.iPhoneXSMax)
-        ]
-        let result: Bool = nil != iPhoneXSeries.firstIndex(of: Device.current)
+        let iPhoneXSeries: [Device] = Device.allXSeriesDevices + Device.allSimulatorXSeriesDevices
+        let result: Bool = iPhoneXSeries.contains(Device.current)
         Anchor.result = result
         return result
     }()
