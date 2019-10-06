@@ -2,6 +2,18 @@
 
 -----
 
+## [0.9.3](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.3) (2019-10-06)
+
+- Use canImport instead of platform.
+
+---
+
+## [0.9.2](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.2) (2019-09-28)
+
+- Fix.
+
+---
+
 ## [0.9.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.1) (2019-09-28)
 
 - Add support for the new September 2019 devices.
