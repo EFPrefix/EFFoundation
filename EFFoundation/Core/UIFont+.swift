@@ -5,7 +5,7 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if canImport(UIKit)
 import UIKit
 import CoreGraphics
 

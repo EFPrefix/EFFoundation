@@ -7,23 +7,23 @@
 
 import CoreGraphics
 
-#if os(iOS) || os(tvOS) || os(macOS)
+#if canImport(CoreImage)
 import CoreImage
 #endif
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
 public extension CGImage {
 
-    #if os(iOS) || os(tvOS) || os(macOS)
+    #if canImport(CoreImage)
     func ciImage() -> CIImage {
         return CIImage(cgImage: self)
     }
     #endif
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if canImport(UIKit)
     func uiImage() -> UIImage {
         return UIImage(cgImage: self)
     }

@@ -5,10 +5,10 @@
 //  Created by EyreFree on 2019/8/28.
 //
 
-#if os(iOS) || os(tvOS) || os(macOS)
+#if canImport(CoreImage)
 import CoreImage
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
@@ -18,7 +18,7 @@ public extension CIColor {
         return CGColor(colorSpace: colorSpace, components: components)
     }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if canImport(UIKit)
     var uiColor: UIColor {
         return UIColor(ciColor: self)
     }

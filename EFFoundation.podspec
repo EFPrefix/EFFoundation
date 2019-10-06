@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'EFFoundation.'
   
   s.description      = <<-DESC
