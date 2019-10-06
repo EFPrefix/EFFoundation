@@ -2,6 +2,12 @@
 
 -----
 
+## [0.10.1](https://github.com/EFPrefix/EFFoundation/releases/tag/0.10.1) (2019-10-07)
+
+- Fix.
+
+---
+
 ## [0.10.0](https://github.com/EFPrefix/EFFoundation/releases/tag/0.10.0) (2019-10-06)
 
 - `var` changed to `func` in `CGColor`, `CIColor` and `NSColor`.

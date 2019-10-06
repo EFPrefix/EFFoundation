@@ -110,6 +110,7 @@ public extension UIImage {
         return self.resizableImage(withCapInsets: insetsV, resizingMode: .stretch)
     }
 }
+#endif
 
 // GIF
 fileprivate struct AssociatedObjectKeys {
@@ -256,5 +257,4 @@ public extension UIImage {
         return animation
     }
 }
-#endif
 #endif

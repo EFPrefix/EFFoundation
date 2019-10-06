@@ -5,7 +5,8 @@
 //  Created by EyreFree on 2019/8/28.
 //
 
-#if os(iOS)
+#if canImport(UIKit)
+#if os(iOS) || os(tvOS)
 import UIKit
 import ImageIO
 
@@ -38,4 +39,5 @@ public extension UIImageView {
         }
     }
 }
+#endif
 #endif
