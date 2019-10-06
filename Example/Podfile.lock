@@ -1,18 +1,18 @@
 PODS:
   - DeviceKit (2.2.0)
-  - EFFoundation/Attributes (0.9.5):
+  - EFFoundation/Attributes (0.10.0):
     - EFFoundation/Core
     - SwiftyAttributes (>= 5.1.1)
-  - EFFoundation/Complete (0.9.5):
+  - EFFoundation/Complete (0.10.0):
     - EFFoundation/Attributes
     - EFFoundation/Core
     - EFFoundation/Device
     - EFFoundation/Reachability
-  - EFFoundation/Core (0.9.5)
-  - EFFoundation/Device (0.9.5):
+  - EFFoundation/Core (0.10.0)
+  - EFFoundation/Device (0.10.0):
     - DeviceKit (>= 2.2.0)
     - EFFoundation/Core
-  - EFFoundation/Reachability (0.9.5):
+  - EFFoundation/Reachability (0.10.0):
     - EFFoundation/Core
     - ReachabilitySwift (>= 4.3.1)
   - ReachabilitySwift (4.3.1)
@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DeviceKit: ee5d2ec3bc8ad3847f9f0f202de0be09448707e1
-  EFFoundation: 147d8ddd02f3376fde550497483f0950bca0b9b9
+  EFFoundation: e92f2cc755c209305563199b4f8590eb006f1715
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 

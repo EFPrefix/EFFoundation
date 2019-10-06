@@ -10,11 +10,11 @@ import AppKit
 
 public extension NSColor {
 
-    var ciColor: CIColor {
-        return cgColor.ciColor
+    func ciColor() -> CIColor {
+        return cgColor().ciColor()
     }
 
-    var cgColor: CGColor {
+    func cgColor() -> CGColor {
         return cgColor
     }
 }

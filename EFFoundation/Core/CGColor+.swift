@@ -18,13 +18,13 @@ import UIKit
 public extension CGColor {
 
     #if canImport(CoreImage)
-    var ciColor: CIColor {
+    func ciColor() -> CIColor {
         return CIColor(cgColor: self)
     }
     #endif
 
     #if canImport(UIKit)
-    var uiColor: UIColor {
+    func uiColor() -> UIColor {
         return UIColor(cgColor: self)
     }
     #endif

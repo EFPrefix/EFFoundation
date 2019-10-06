@@ -14,13 +14,17 @@ import UIKit
 
 public extension CIColor {
 
-    var cgColor: CGColor? {
-        return CGColor(colorSpace: colorSpace, components: components)
-    }
-
     #if canImport(UIKit)
-    var uiColor: UIColor {
+    func uiColor() -> UIColor {
         return UIColor(ciColor: self)
+    }
+    
+    func cgColor() -> CGColor {
+        return CGColor(colorSpace: colorSpace, components: components) ?? uiColor().cgColor()
+    }
+    #else
+    func cgColor() -> CGColor? {
+        return CGColor(colorSpace: colorSpace, components: components)
     }
     #endif
 }

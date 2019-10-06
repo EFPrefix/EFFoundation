@@ -7,6 +7,7 @@
 
 #if canImport(AppKit)
 import AppKit
+import CoreImage
 
 public extension NSImage {
     
@@ -15,7 +16,7 @@ public extension NSImage {
     }
 
     func cgImage() -> CGImage? {
-        return ciImage()?.cgImage()
+        return cgImage(forProposedRect: nil, context: nil, hints: nil) ?? ciImage()?.cgImage()
     }
 }
 #endif
