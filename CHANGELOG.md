@@ -2,6 +2,12 @@
 
 -----
 
+## [0.9.4](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.4) (2019-10-06)
+
+- Fix.
+
+---
+
 ## [0.9.3](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.3) (2019-10-06)
 
 - Use canImport instead of platform.

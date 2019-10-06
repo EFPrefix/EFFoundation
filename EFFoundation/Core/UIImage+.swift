@@ -14,18 +14,27 @@ import UIKit
 
 #if canImport(CoreImage)
 import CoreImage
+#endif
 
 public extension UIImage {
 
+    #if canImport(CoreImage)
     func ciImage() -> CIImage? {
         return ciImage ?? CIImage(image: self)
     }
+    #endif
 
     func cgImage() -> CGImage? {
-        return cgImage ?? ciImage()?.cgImage()
+        let rtnValue: CGImage? = cgImage
+        #if canImport(CoreImage)
+        if nil == rtnValue {
+            return ciImage()?.cgImage()
+        }
+        #endif
+        return rtnValue
     }
 }
-#endif
+
 
 #if os(iOS)
 public extension UIImage {

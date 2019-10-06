@@ -27,5 +27,15 @@ public extension UIColor {
         }
         self.init(hexRGB: hex, alpha: alpha)
     }
+    
+    #if canImport(CoreImage)
+    func ciColor() -> CIColor {
+        return ciColor
+    }
+    #endif
+
+    func cgColor() -> CGColor {
+        return cgColor
+    }
 }
 #endif
