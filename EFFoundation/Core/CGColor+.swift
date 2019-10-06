@@ -7,23 +7,23 @@
 
 import CoreGraphics
 
-#if os(iOS) || os(tvOS) || os(macOS)
+#if canImport(CoreImage)
 import CoreImage
 #endif
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
 public extension CGColor {
 
-    #if os(iOS) || os(tvOS) || os(macOS)
+    #if canImport(CoreImage)
     var ciColor: CIColor {
         return CIColor(cgColor: self)
     }
     #endif
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if canImport(UIKit)
     var uiColor: UIColor {
         return UIColor(cgColor: self)
     }

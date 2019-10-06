@@ -5,12 +5,15 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-#if os(iOS)
-import CoreGraphics
-import CoreImage
 
-import UIKit
+import CoreGraphics
 import ImageIO
+
+#if canImport(UIKit)
+import UIKit
+
+#if canImport(CoreImage)
+import CoreImage
 
 public extension UIImage {
 
@@ -22,7 +25,9 @@ public extension UIImage {
         return cgImage ?? ciImage()?.cgImage()
     }
 }
+#endif
 
+#if os(iOS)
 public extension UIImage {
 
     static let appIcon: UIImage? = {
@@ -242,4 +247,5 @@ public extension UIImage {
         return animation
     }
 }
+#endif
 #endif
