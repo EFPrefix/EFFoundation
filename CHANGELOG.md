@@ -2,6 +2,12 @@
 
 -----
 
+## [0.9.5](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.5) (2019-10-06)
+
+- Add extension for `NSColor` and `NSImage`.
+
+---
+
 ## [0.9.4](https://github.com/EFPrefix/EFFoundation/releases/tag/0.9.4) (2019-10-06)
 
 - Fix.
