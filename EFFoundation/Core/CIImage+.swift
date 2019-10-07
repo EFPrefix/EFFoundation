@@ -28,5 +28,9 @@ public extension CIImage {
         return UIImage(ciImage: self)
     }
     #endif
+    
+    var size: CGSize {
+        return extent.size
+    }
 }
 #endif

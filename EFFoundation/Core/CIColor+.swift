@@ -18,14 +18,19 @@ public extension CIColor {
     func uiColor() -> UIColor {
         return UIColor(ciColor: self)
     }
+    #endif
     
-    func cgColor() -> CGColor {
-        return CGColor(colorSpace: colorSpace, components: components) ?? uiColor().cgColor()
-    }
-    #else
     func cgColor() -> CGColor? {
         return CGColor(colorSpace: colorSpace, components: components)
     }
-    #endif
+    
+    static func white(white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> CIColor {
+        return self.init(red: white, green: white, blue: white, alpha: alpha)
+    }
+    
+    static func black(black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> CIColor {
+        let white: CGFloat = 1.0 - black
+        return self.init(red: white, green: white, blue: white, alpha: alpha)
+    }
 }
 #endif
