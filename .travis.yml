@@ -15,7 +15,7 @@ before_install:
 script:
   - set -o pipefail
   - sh Startup.sh
-  - pod lib lint --allow-warnings
+  - pod lib lint --allow-warnings --verbose
 
 after_success:
   - sleep 3
