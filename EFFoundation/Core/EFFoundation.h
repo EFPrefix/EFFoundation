@@ -1,6 +1,6 @@
 //
-//  EFQRCode.h
-//  EFQRCode
+//  EFFoundation.h
+//  EFFoundation
 //
 //  Created by EyreFree on 2017/4/16.
 //
@@ -26,5 +26,5 @@
 
 @import Foundation;
 
-FOUNDATION_EXPORT double EFQRCodeVersionNumber;
-FOUNDATION_EXPORT const unsigned char EFQRCodeVersionString[];
+FOUNDATION_EXPORT double EFFoundationVersionNumber;
+FOUNDATION_EXPORT const unsigned char EFFoundationVersionString[];
