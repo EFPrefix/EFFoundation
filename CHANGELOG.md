@@ -2,6 +2,13 @@
 
 -----
 
+## [1.0.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.0.1) (2019-10-09)
+
+* Fix `UIColor` to `CIColor`;
+* Fix `.h`.
+
+---
+
 ## [1.0.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.0.0) (2019-10-08)
 
 * Support macOS & watchOS & tvOS.

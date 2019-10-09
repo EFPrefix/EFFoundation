@@ -30,7 +30,7 @@ public extension UIColor {
     
     #if canImport(CoreImage)
     func ciColor() -> CIColor {
-        return ciColor
+        return CIColor(color: self)
     }
     #endif
 
