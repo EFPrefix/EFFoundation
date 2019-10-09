@@ -19,9 +19,9 @@
 		1263757C234C86CF00F87737 /* EFFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637556234C86CD00F87737 /* EFFoundation.swift */; };
 		1263757D234C86CF00F87737 /* EFFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637556234C86CD00F87737 /* EFFoundation.swift */; };
 		1263757E234C86CF00F87737 /* EFFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637556234C86CD00F87737 /* EFFoundation.swift */; };
-		1263757F234C86CF00F87737 /* EFQRCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFQRCode.h */; };
-		12637580234C86CF00F87737 /* EFQRCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFQRCode.h */; };
-		12637581234C86CF00F87737 /* EFQRCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFQRCode.h */; };
+		1263757F234C86CF00F87737 /* EFFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12637580234C86CF00F87737 /* EFFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12637581234C86CF00F87737 /* EFFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 12637557234C86CD00F87737 /* EFFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12637583234C86CF00F87737 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637558234C86CD00F87737 /* CGFloat+.swift */; };
 		12637584234C86CF00F87737 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637558234C86CD00F87737 /* CGFloat+.swift */; };
 		12637585234C86CF00F87737 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637558234C86CD00F87737 /* CGFloat+.swift */; };
@@ -124,7 +124,7 @@
 		12637554234C86CD00F87737 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "EFFoundation/Core/UIImage+.swift"; sourceTree = "<group>"; };
 		12637555234C86CD00F87737 /* URL+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+.swift"; path = "EFFoundation/Core/URL+.swift"; sourceTree = "<group>"; };
 		12637556234C86CD00F87737 /* EFFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFFoundation.swift; path = EFFoundation/Core/EFFoundation.swift; sourceTree = "<group>"; };
-		12637557234C86CD00F87737 /* EFQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EFQRCode.h; path = EFFoundation/Core/EFQRCode.h; sourceTree = "<group>"; };
+		12637557234C86CD00F87737 /* EFFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EFFoundation.h; path = EFFoundation/Core/EFFoundation.h; sourceTree = "<group>"; };
 		12637558234C86CD00F87737 /* CGFloat+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGFloat+.swift"; path = "EFFoundation/Core/CGFloat+.swift"; sourceTree = "<group>"; };
 		12637559234C86CD00F87737 /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+.swift"; path = "EFFoundation/Core/Date+.swift"; sourceTree = "<group>"; };
 		1263755A234C86CD00F87737 /* UIImageView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+.swift"; path = "EFFoundation/Core/UIImageView+.swift"; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		12637552234C867D00F87737 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				12637557234C86CD00F87737 /* EFQRCode.h */,
+				12637557234C86CD00F87737 /* EFFoundation.h */,
 				12637561234C86CD00F87737 /* Info-tvOS.plist */,
 				1263756B234C86CE00F87737 /* Info.plist */,
 			);
@@ -275,7 +275,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12637581234C86CF00F87737 /* EFQRCode.h in Headers */,
+				12637581234C86CF00F87737 /* EFFoundation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +283,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12637580234C86CF00F87737 /* EFQRCode.h in Headers */,
+				12637580234C86CF00F87737 /* EFFoundation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +298,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1263757F234C86CF00F87737 /* EFQRCode.h in Headers */,
+				1263757F234C86CF00F87737 /* EFFoundation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

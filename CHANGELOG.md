@@ -2,6 +2,14 @@
 
 -----
 
+## [1.0.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.0.0) (2019-10-08)
+
+* Support macOS & watchOS & tvOS.
+* Support SPM;
+* Support Carthage.
+
+---
+
 ## [0.10.2](https://github.com/EFPrefix/EFFoundation/releases/tag/0.10.2) (2019-10-08)
 
 - Add.
