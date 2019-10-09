@@ -1,6 +1,8 @@
 # EFFoundation
 
 [![CI Status](https://img.shields.io/travis/EFPrefix/EFFoundation.svg?style=flat)](https://travis-ci.org/EFPrefix/EFFoundation)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage/)
+[![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)](https://swift.org/package-manager/)
 [![Version](https://img.shields.io/cocoapods/v/EFFoundation.svg?style=flat)](https://cocoapods.org/pods/EFFoundation)
 [![License](https://img.shields.io/cocoapods/l/EFFoundation.svg?style=flat)](https://cocoapods.org/pods/EFFoundation)
 [![Platform](https://img.shields.io/cocoapods/p/EFFoundation.svg?style=flat)](https://cocoapods.org/pods/EFFoundation)
