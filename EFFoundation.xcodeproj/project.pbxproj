@@ -122,10 +122,6 @@
 		126375B8234C86CF00F87737 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637565234C86CE00F87737 /* UIControl+.swift */; };
 		126375B9234C86CF00F87737 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637565234C86CE00F87737 /* UIControl+.swift */; };
 		126375BA234C86CF00F87737 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637565234C86CE00F87737 /* UIControl+.swift */; };
-		126375BB234C86CF00F87737 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637566234C86CE00F87737 /* CGRect+.swift */; };
-		126375BC234C86CF00F87737 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637566234C86CE00F87737 /* CGRect+.swift */; };
-		126375BD234C86CF00F87737 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637566234C86CE00F87737 /* CGRect+.swift */; };
-		126375BE234C86CF00F87737 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637566234C86CE00F87737 /* CGRect+.swift */; };
 		126375BF234C86CF00F87737 /* NSString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637567234C86CE00F87737 /* NSString+.swift */; };
 		126375C0234C86CF00F87737 /* NSString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637567234C86CE00F87737 /* NSString+.swift */; };
 		126375C1234C86CF00F87737 /* NSString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12637567234C86CE00F87737 /* NSString+.swift */; };
@@ -195,7 +191,6 @@
 		12637562234C86CE00F87737 /* UIGestureRecognizer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIGestureRecognizer+.swift"; path = "EFFoundation/Core/UIGestureRecognizer+.swift"; sourceTree = "<group>"; };
 		12637563234C86CE00F87737 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+.swift"; path = "EFFoundation/Core/String+.swift"; sourceTree = "<group>"; };
 		12637565234C86CE00F87737 /* UIControl+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIControl+.swift"; path = "EFFoundation/Core/UIControl+.swift"; sourceTree = "<group>"; };
-		12637566234C86CE00F87737 /* CGRect+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+.swift"; path = "EFFoundation/Core/CGRect+.swift"; sourceTree = "<group>"; };
 		12637567234C86CE00F87737 /* NSString+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSString+.swift"; path = "EFFoundation/Core/NSString+.swift"; sourceTree = "<group>"; };
 		12637568234C86CE00F87737 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "EFFoundation/Core/UIColor+.swift"; sourceTree = "<group>"; };
 		1263756A234C86CE00F87737 /* CGColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGColor+.swift"; path = "EFFoundation/Core/CGColor+.swift"; sourceTree = "<group>"; };
@@ -270,7 +265,6 @@
 				1263756A234C86CE00F87737 /* CGColor+.swift */,
 				12637558234C86CD00F87737 /* CGFloat+.swift */,
 				1263755B234C86CD00F87737 /* CGImage.swift */,
-				12637566234C86CE00F87737 /* CGRect+.swift */,
 				1263756C234C86CE00F87737 /* CGSize+.swift */,
 				1263756F234C86CE00F87737 /* CIColor+.swift */,
 				1263756E234C86CE00F87737 /* CIImage+.swift */,
@@ -563,7 +557,6 @@
 				123D7DBC2351C74F00322366 /* Float+.swift in Sources */,
 				126375E5234C86CF00F87737 /* UINavigationController+.swift in Sources */,
 				126375B1234C86CF00F87737 /* String+.swift in Sources */,
-				126375BD234C86CF00F87737 /* CGRect+.swift in Sources */,
 				126375E1234C86CF00F87737 /* CIColor+.swift in Sources */,
 				126375DD234C86CF00F87737 /* CIImage+.swift in Sources */,
 				12637591234C86CF00F87737 /* CGImage.swift in Sources */,
@@ -608,7 +601,6 @@
 				123D7DBB2351C74F00322366 /* Float+.swift in Sources */,
 				126375E4234C86CF00F87737 /* UINavigationController+.swift in Sources */,
 				126375B0234C86CF00F87737 /* String+.swift in Sources */,
-				126375BC234C86CF00F87737 /* CGRect+.swift in Sources */,
 				126375E0234C86CF00F87737 /* CIColor+.swift in Sources */,
 				126375DC234C86CF00F87737 /* CIImage+.swift in Sources */,
 				12637590234C86CF00F87737 /* CGImage.swift in Sources */,
@@ -670,7 +662,6 @@
 				123D7DE72351C8B100322366 /* UInt8+.swift in Sources */,
 				12637592234C86CF00F87737 /* CGImage.swift in Sources */,
 				126375C6234C86CF00F87737 /* UIColor+.swift in Sources */,
-				126375BE234C86CF00F87737 /* CGRect+.swift in Sources */,
 				123D7DEF2351C8B100322366 /* UInt16+.swift in Sources */,
 				123D7DCA2351C8A700322366 /* Int8+.swift in Sources */,
 				123D7DF92351E8AE00322366 /* UIWindow+.swift in Sources */,
@@ -698,7 +689,6 @@
 				123D7DBA2351C74F00322366 /* Float+.swift in Sources */,
 				126375E3234C86CF00F87737 /* UINavigationController+.swift in Sources */,
 				126375AF234C86CF00F87737 /* String+.swift in Sources */,
-				126375BB234C86CF00F87737 /* CGRect+.swift in Sources */,
 				126375DF234C86CF00F87737 /* CIColor+.swift in Sources */,
 				126375DB234C86CF00F87737 /* CIImage+.swift in Sources */,
 				1263758F234C86CF00F87737 /* CGImage.swift in Sources */,
