@@ -15,28 +15,25 @@ import CoreImage
 import UIKit
 #endif
 
-public extension CGColor {
+extension CGColor: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == CGColor {
 
     #if canImport(CoreImage)
-    func ciColor() -> CIColor {
-        return CIColor(cgColor: self)
+    var ciColor: CIColor {
+        return CIColor(cgColor: base)
     }
     #endif
 
     #if canImport(UIKit)
-    func uiColor() -> UIColor {
-        return UIColor(cgColor: self)
+    var uiColor: UIColor {
+        return UIColor(cgColor: base)
     }
     #endif
     
     var rgba: (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8)? {
-        var color = self
+        var color = base
         if color.colorSpace?.model != .rgb, #available(iOS 9.0, macOS 10.11, tvOS 9.0, watchOS 2.0, *) {
-            color = color.converted(
-                to: CGColorSpaceCreateDeviceRGB(),
-                intent: .defaultIntent,
-                options: nil
-                ) ?? color
+            color = color.converted(to: CGColorSpaceCreateDeviceRGB(), intent: .defaultIntent, options: nil) ?? color
         }
         if let components = color.components, 4 == color.numberOfComponents {
             return(

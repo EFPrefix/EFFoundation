@@ -9,11 +9,11 @@
 import CoreGraphics
 import UIKit
 
-public extension CGFloat {
+public extension EFFoundationWrapper where Base == CGFloat {
 
     static let statusBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 44 : 20
-    static let statusBarAndNavigationBarHeight: CGFloat = statusBarHeight + navigationBarHeight
+    static let statusBarAndNavigationBarHeight: CGFloat = Self.statusBarHeight + Self.navigationBarHeight
     static let bottomSafeAreaHeight: CGFloat = UIDevice.isiPhoneXSeries ? 34 : 0
-    static let tabBarHeight: CGFloat = bottomSafeAreaHeight + 55
+    static let tabBarHeight: CGFloat = Self.bottomSafeAreaHeight + 55
 }
 #endif

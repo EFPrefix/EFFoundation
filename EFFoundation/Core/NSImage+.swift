@@ -9,14 +9,15 @@
 import AppKit
 import CoreImage
 
-public extension NSImage {
+extension NSImage: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == NSImage {
     
-    func ciImage() -> CIImage? {
-        return tiffRepresentation(using: .none, factor: 0).flatMap(CIImage.init)
+    var ciImage: CIImage? {
+        return base.tiffRepresentation(using: .none, factor: 0).flatMap(CIImage.init)
     }
 
-    func cgImage() -> CGImage? {
-        return cgImage(forProposedRect: nil, context: nil, hints: nil) ?? ciImage()?.cgImage()
+    var cgImage: CGImage? {
+        return base.cgImage(forProposedRect: nil, context: nil, hints: nil) ?? ciImage?.ef.cgImage
     }
 }
 #endif

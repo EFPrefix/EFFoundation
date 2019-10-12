@@ -10,31 +10,33 @@
 import UIKit
 import ImageIO
 
-public extension UIImageView {
+// Already in UIImageView+.swift
+// extension UIImageView: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == UIImageView {
 
     func loadGif(data: Data) {
         DispatchQueue.global().async {
-            let image = UIImage.gif(data: data)
+            let image = UIImage.EF.gif(data: data)
             DispatchQueue.main.async {
-                self.image = image
+                self.base.image = image
             }
         }
     }
 
     func loadGif(url: String) {
         DispatchQueue.global().async {
-            let image = UIImage.gif(url: url)
+            let image = UIImage.EF.gif(url: url)
             DispatchQueue.main.async {
-                self.image = image
+                self.base.image = image
             }
         }
     }
 
     func loadGif(name: String) {
         DispatchQueue.global().async {
-            let image = UIImage.gif(name: name)
+            let image = UIImage.EF.gif(name: name)
             DispatchQueue.main.async {
-                self.image = image
+                self.base.image = image
             }
         }
     }

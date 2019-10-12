@@ -16,19 +16,20 @@ import UIKit
 import CoreImage
 #endif
 
-public extension UIImage {
+extension UIImage: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == UIImage {
 
     #if canImport(CoreImage)
-    func ciImage() -> CIImage? {
-        return ciImage ?? CIImage(image: self)
+    var ciImage: CIImage? {
+        return base.ciImage ?? CIImage(image: base)
     }
     #endif
 
-    func cgImage() -> CGImage? {
-        let rtnValue: CGImage? = cgImage
+    var cgImage: CGImage? {
+        let rtnValue: CGImage? = base.cgImage
         #if canImport(CoreImage)
         if nil == rtnValue {
-            return ciImage()?.cgImage()
+            return ciImage?.ef.cgImage
         }
         #endif
         return rtnValue
@@ -37,18 +38,7 @@ public extension UIImage {
 
 
 #if os(iOS)
-public extension UIImage {
-
-    static let appIcon: UIImage? = {
-        if let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
-            let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
-            let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
-            let lastIcon = iconFiles.last {
-            return UIImage(named: lastIcon)
-        }
-        return nil
-    }()
-
+extension UIImage {
     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         UIGraphicsBeginImageContext(size)
         let context: CGContext? = UIGraphicsGetCurrentContext()
@@ -62,14 +52,27 @@ public extension UIImage {
             return nil
         }
     }
+}
+
+public extension EFFoundationWrapper where Base == UIImage {
+
+    static let appIcon: UIImage? = {
+        if let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
+            let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
+            let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
+            let lastIcon = iconFiles.last {
+            return UIImage(named: lastIcon)
+        }
+        return nil
+    }()
 
     func cornerRadiused(radius: CGFloat) -> UIImage? {
         let imageLayer: CALayer = CALayer()
-        imageLayer.frame = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        imageLayer.contents = self.cgImage
+        imageLayer.frame = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
+        imageLayer.contents = base.cgImage
         imageLayer.masksToBounds = true
         imageLayer.cornerRadius = radius
-        UIGraphicsBeginImageContext(self.size)
+        UIGraphicsBeginImageContext(base.size)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         imageLayer.render(in: context)
         let roundedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
@@ -78,16 +81,16 @@ public extension UIImage {
     }
 
     var png: Data? {
-        return self.pngData()
+        return base.pngData()
     }
 
     func jpg(compressionQuality: CGFloat = 1) -> Data? {
-        return self.jpegData(compressionQuality: compressionQuality)
+        return base.jpegData(compressionQuality: compressionQuality)
     }
 
     func resize(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
-        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        base.draw(in: CGRect(origin: CGPoint.zero, size: size))
         let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
@@ -95,8 +98,8 @@ public extension UIImage {
 
     func nine(insets: UIEdgeInsets? = nil) -> UIImage {
         let insets: UIEdgeInsets? = insets ?? {
-            let width: CGFloat = self.size.width
-            let height: CGFloat = self.size.height
+            let width: CGFloat = base.size.width
+            let height: CGFloat = base.size.height
             if width > 3 && height > 3 {
                 let hMargin: CGFloat = (width - 1) / 2
                 let vMargin: CGFloat = (height - 1) / 2
@@ -106,8 +109,8 @@ public extension UIImage {
             return nil
             } (
         )
-        guard let insetsV = insets else { return self }
-        return self.resizableImage(withCapInsets: insetsV, resizingMode: .stretch)
+        guard let insetsV = insets else { return base }
+        return base.resizableImage(withCapInsets: insetsV, resizingMode: .stretch)
     }
 }
 #endif
@@ -117,14 +120,14 @@ fileprivate struct AssociatedObjectKeys {
     static var dataGifKey: String = "dataGifKey"
 }
 
-public extension UIImage {
+public extension EFFoundationWrapper where Base == UIImage {
 
     var dataGif: Data? {
         get {
-            return objc_getAssociatedObject(self, &AssociatedObjectKeys.dataGifKey) as? Data
+            return objc_getAssociatedObject(base, &AssociatedObjectKeys.dataGifKey) as? Data
         }
         set {
-            objc_setAssociatedObject(self, &AssociatedObjectKeys.dataGifKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base, &AssociatedObjectKeys.dataGifKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
@@ -133,8 +136,8 @@ public extension UIImage {
             printLog("SwiftGif: Source for the image does not exist")
             return nil
         }
-        let image: UIImage? = UIImage.animatedImageWithSource(source)
-        image?.dataGif = data
+        var image: UIImage? = UIImage.EF.animatedImageWithSource(source)
+        image?.ef.dataGif = data
         return image
     }
 
@@ -214,7 +217,7 @@ public extension UIImage {
         }
         var gcd: Int = array[0]
         for val in array {
-            gcd = UIImage.gcdForPair(val, gcd)
+            gcd = UIImage.EF.gcdForPair(val, gcd)
         }
         return gcd
     }
@@ -228,7 +231,7 @@ public extension UIImage {
             if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
                 images.append(image)
             }
-            let delaySeconds: Double = UIImage.delayForImageAtIndex(Int(i), source: source)
+            let delaySeconds: Double = UIImage.EF.delayForImageAtIndex(Int(i), source: source)
             delays.append(Int(delaySeconds * 1000.0))
         }
 

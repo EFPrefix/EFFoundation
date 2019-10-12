@@ -7,27 +7,30 @@
 
 import CoreGraphics
 
-public extension CGRect {
+extension CGRect: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == CGRect {
     
     var x: CGFloat {
         get {
-            return self.origin.x
+            return base.origin.x
         }
         set {
-            var r = self
+            var r = base
             r.origin.x = newValue
-            self = r
+            //todo
+            //base = r
         }
     }
     
     var y: CGFloat {
         get {
-            return self.origin.y
+            return base.origin.y
         }
         set {
-            var r = self
+            var r = base
             r.origin.y = newValue
-            self = r
+            //todo
+            //base = r
         }
     }
 }

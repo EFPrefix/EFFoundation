@@ -12,25 +12,26 @@ import CoreImage
 import UIKit
 #endif
 
-public extension CIColor {
+extension CIColor: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == CIColor {
 
     #if canImport(UIKit)
-    func uiColor() -> UIColor {
-        return UIColor(ciColor: self)
+    var uiColor: UIColor {
+        return UIColor(ciColor: base)
     }
     #endif
     
-    func cgColor() -> CGColor? {
-        return CGColor(colorSpace: colorSpace, components: components)
+    var cgColor: CGColor? {
+        return CGColor(colorSpace: base.colorSpace, components: base.components)
     }
     
     static func white(white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> CIColor {
-        return self.init(red: white, green: white, blue: white, alpha: alpha)
+        return Base.init(red: white, green: white, blue: white, alpha: alpha)
     }
     
     static func black(black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> CIColor {
         let white: CGFloat = 1.0 - black
-        return self.init(red: white, green: white, blue: white, alpha: alpha)
+        return Base.init(red: white, green: white, blue: white, alpha: alpha)
     }
 }
 #endif

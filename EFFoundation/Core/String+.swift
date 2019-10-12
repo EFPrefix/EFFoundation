@@ -8,22 +8,24 @@
 import Foundation
 import CoreGraphics
 
-public extension String {
+extension String: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == String {
 
+    // Convert
     var attributedString: NSAttributedString {
-        return NSAttributedString(string: self)
+        return NSAttributedString(string: base)
     }
 
     var mutableAttributedString: NSMutableAttributedString {
-        return NSMutableAttributedString(string: self)
+        return NSMutableAttributedString(string: base)
     }
 
     var nsString: NSString {
-        return self as NSString
+        return base as NSString
     }
 
     var bool: Bool? {
-        switch self.lowercased() {
+        switch base.lowercased() {
         case "true":
             return true
         case "false":
@@ -34,97 +36,95 @@ public extension String {
     }
 
     var cgFloat: CGFloat? {
-        guard let double = self.double else { return nil }
+        guard let double = base.ef.double else { return nil }
         return CGFloat(double)
     }
 
     var double: Double? {
-        return Double(self)
+        return Double(base)
     }
 
     var float: Float? {
-        return Float(self)
+        return Float(base)
     }
 
     var int: Int? {
-        return Int(self)
+        return Int(base)
     }
 
     var int8: Int8? {
-        return Int8(self)
+        return Int8(base)
     }
 
     var int16: Int16? {
-        return Int16(self)
+        return Int16(base)
     }
 
     var int32: Int32? {
-        return Int32(self)
+        return Int32(base)
     }
 
     var int64: Int64? {
-        return Int64(self)
+        return Int64(base)
     }
 
     var uInt: UInt? {
-        return UInt(self)
+        return UInt(base)
     }
 
     var uInt8: UInt8? {
-        return UInt8(self)
+        return UInt8(base)
     }
 
     var uInt16: UInt16? {
-        return UInt16(self)
+        return UInt16(base)
     }
 
     var uInt32: UInt32? {
-        return UInt32(self)
+        return UInt32(base)
     }
 
     var uInt64: UInt64? {
-        return UInt64(self)
+        return UInt64(base)
     }
-}
 
-public extension String {
-
+    // Common
     var clean: String {
-        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return base.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
     func replace(_ string: String, with: String, options: String.CompareOptions = [], range: Range<String.Index>? = nil) -> String {
-        return replacingOccurrences(of: string, with: with, options: options, range: range)
+        return base.replacingOccurrences(of: string, with: with, options: options, range: range)
     }
 
     func replacePrefix(string: String, with: String) -> String {
-        if self.hasPrefix(string) {
-            return with + String(self.dropFirst(string.count))
+        if base.hasPrefix(string) {
+            return with + String(base.dropFirst(string.count))
         }
-        return self
+        return base
     }
 
     func replaceSuffix(string: String, with: String) -> String {
-        if self.hasSuffix(string) {
-            return "\(self.dropLast(string.count))" + with
+        if base.hasSuffix(string) {
+            return "\(base.dropLast(string.count))" + with
         }
-        return self
+        return base
     }
 
     func remove(string: String) -> String {
-        return self.replace(string, with: "")
+        return replace(string, with: "")
     }
 
     func removePrefix(string: String) -> String {
-        return self.replacePrefix(string: string, with: "")
+        return replacePrefix(string: string, with: "")
     }
 
     func removeSuffix(string: String) -> String {
-        return self.replaceSuffix(string: string, with: "")
+        return replaceSuffix(string: string, with: "")
     }
 
     func i18n(comment: String = "") -> String {
-        return NSLocalizedString(self, comment: comment)
+        return NSLocalizedString(base, comment: comment)
     }
 
     static func random(length: Int) -> String {
@@ -141,7 +141,7 @@ public extension String {
     }
 
     func dictionary(using: String.Encoding = String.Encoding.utf8) -> Any? {
-        if let data = self.data(using: using) {
+        if let data = base.data(using: using) {
             do {
                 return try JSONSerialization.jsonObject(
                     with: data, options: JSONSerialization.ReadingOptions.allowFragments

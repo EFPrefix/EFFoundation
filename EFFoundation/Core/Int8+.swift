@@ -1,31 +1,24 @@
 //
-//  CGFloat+.swift
+//  Float+.swift
 //  EFFoundation
 //
-//  Created by EyreFree on 2019/8/14.
+//  Created by EyreFree on 2019/10/12.
+//  Copyright © 2019 EyreFree. All rights reserved.
 //
 
 import Foundation
 import CoreGraphics
 
-#if os(iOS)
-import UIKit
-#endif
-
-extension CGFloat: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == CGFloat {
-
-    #if os(iOS)
-    static let screenWidth: CGFloat = UIScreen.main.bounds.size.width
-    static let screenHeight: CGFloat = UIScreen.main.bounds.size.height
-    static let screenMinEdge: CGFloat = Swift.min(screenWidth, screenHeight)
-    #endif
-
-    static let navigationBarHeight: CGFloat = 44
+extension Int8: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == Int8 {
 
     // Convert
     var bool: Bool {
         return 0 != base
+    }
+
+    var cgFloat: CGFloat {
+        return CGFloat(base)
     }
 
     var double: Double {
@@ -38,10 +31,6 @@ public extension EFFoundationWrapper where Base == CGFloat {
 
     var int: Int {
         return Int(base)
-    }
-
-    var int8: Int8 {
-        return Int8(base)
     }
 
     var int16: Int16 {
