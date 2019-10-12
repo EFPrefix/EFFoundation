@@ -8,10 +8,11 @@
 #if os(iOS)
 import UIKit
 
-public extension UIView {
+extension UIView: EFFoundationCompatible { }
+public extension EFFoundationWrapper where Base == UIView {
 
     var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
+        var parentResponder: UIResponder? = base
         while parentResponder != nil {
             parentResponder = parentResponder?.next
             if let viewController = parentResponder as? UIViewController {

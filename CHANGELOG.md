@@ -2,6 +2,12 @@
 
 -----
 
+## [1.1.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.1.0) (2019-10-12)
+
+* Group the properties and functions for Foundation Extensions.
+
+---
+
 ## [1.0.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.0.1) (2019-10-09)
 
 * Fix `UIColor` to `CIColor`;
