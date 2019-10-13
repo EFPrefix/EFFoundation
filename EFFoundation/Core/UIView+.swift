@@ -5,10 +5,12 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 extension UIView: EFFoundationCompatible { }
+
+#if os(iOS)
 public extension EFFoundationWrapper where Base == UIView {
 
     var parentViewController: UIViewController? {
@@ -22,4 +24,5 @@ public extension EFFoundationWrapper where Base == UIView {
         return nil
     }
 }
+#endif
 #endif

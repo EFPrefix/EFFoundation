@@ -8,7 +8,7 @@
 #if os(iOS)
 import UIKit
 
-// Already in UITableView+.swift
+// Already in UIView+.swift
 // extension UITableView: EFFoundationCompatible { }
 public extension EFFoundationWrapper where Base == UITableView {
 

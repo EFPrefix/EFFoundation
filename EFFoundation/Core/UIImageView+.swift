@@ -10,7 +10,7 @@
 import UIKit
 import ImageIO
 
-// Already in UIImageView+.swift
+// Already in UIView+.swift
 // extension UIImageView: EFFoundationCompatible { }
 public extension EFFoundationWrapper where Base == UIImageView {
 
