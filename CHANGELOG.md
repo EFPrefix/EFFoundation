@@ -2,6 +2,12 @@
 
 -----
 
+## [1.1.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.1.2) (2019-11-20)
+
+* Fix visibility.
+
+---
+
 ## [1.1.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.1.1) (2019-10-13)
 
 * Fix for `tvOS`.

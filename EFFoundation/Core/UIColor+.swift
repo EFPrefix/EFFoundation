@@ -9,7 +9,7 @@
 import UIKit
 import CoreGraphics
 
-extension UIColor {
+public extension UIColor {
     convenience init(hexRGB: UInt, alpha: CGFloat = 1.0) {
         self.init(
             red: CGFloat((hexRGB & 0xFF0000) >> 16) / 255.0,

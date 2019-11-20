@@ -38,7 +38,7 @@ public extension EFFoundationWrapper where Base == UIImage {
 
 
 #if os(iOS)
-extension UIImage {
+public extension UIImage {
     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         UIGraphicsBeginImageContext(size)
         let context: CGContext? = UIGraphicsGetCurrentContext()

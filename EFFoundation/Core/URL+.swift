@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension URL {
+public extension URL {
     init?(unexpectedString: String?) {
         if let tryString = unexpectedString?.ef.clean.ef.replacePrefix(string: "http:", with: "https:") {
             if nil != URL(string: tryString) {
