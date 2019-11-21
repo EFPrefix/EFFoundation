@@ -12,26 +12,25 @@ import CoreImage
 import UIKit
 #endif
 
-extension CIImage: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == CIImage {
+public extension CIImage {
 
-    var cgImage: CGImage? {
+    func cgImage() -> CGImage? {
         if #available(iOS 10, macOS 10.12, tvOS 10, watchOS 2, *) {
-            if let cgImage = base.cgImage {
+            if let cgImage = cgImage {
                 return cgImage
             }
         }
-        return CIContext().createCGImage(base, from: base.extent)
+        return CIContext().createCGImage(self, from: extent)
     }
 
     #if canImport(UIKit)
-    var uiImage: UIImage {
-        return UIImage(ciImage: base)
+    func uiImage() -> UIImage {
+        return UIImage(ciImage: self)
     }
     #endif
     
     var size: CGSize {
-        return base.extent.size
+        return extent.size
     }
 }
 #endif

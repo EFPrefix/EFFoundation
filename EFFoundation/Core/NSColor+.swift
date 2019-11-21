@@ -8,24 +8,23 @@
 #if canImport(AppKit)
 import AppKit
 
-extension NSColor: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == NSColor {
+public extension NSColor {
 
-    var ciColor: CIColor {
-        return cgColor.ef.ciColor
+    func ciColor() -> CIColor {
+        return cgColor().ciColor()
     }
 
-    var cgColor: CGColor {
-        return base.cgColor
+    func cgColor() -> CGColor {
+        return cgColor
     }
     
     static func white(white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> NSColor {
-        return Base.init(white: white, alpha: alpha)
+        return self.init(white: white, alpha: alpha)
     }
     
     static func black(black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> NSColor {
         let white: CGFloat = 1.0 - black
-        return Self.white(white: white, alpha: alpha)
+        return self.white(white: white, alpha: alpha)
     }
 }
 #endif

@@ -8,14 +8,12 @@
 #if os(iOS)
 import UIKit
 
-// Already in UIViewController+.swift
-// extension UINavigationController: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == UINavigationController {
+public extension UINavigationController {
 
     func pushViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Swift.Void) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
-        base.pushViewController(viewController, animated: animated)
+        pushViewController(viewController, animated: animated)
         CATransaction.commit()
     }
 }

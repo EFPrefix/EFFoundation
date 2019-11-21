@@ -5,15 +5,13 @@
 //  Created by EyreFree on 2019/8/14.
 //
 
-import Foundation
 import CoreGraphics
 
 #if os(iOS)
 import UIKit
 #endif
 
-extension CGFloat: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == CGFloat {
+public extension CGFloat {
 
     #if os(iOS)
     static let screenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -22,57 +20,4 @@ public extension EFFoundationWrapper where Base == CGFloat {
     #endif
 
     static let navigationBarHeight: CGFloat = 44
-
-    // Convert
-    var bool: Bool {
-        return 0 != base
-    }
-
-    var double: Double {
-        return Double(base)
-    }
-
-    var float: Float {
-        return Float(base)
-    }
-
-    var int: Int {
-        return Int(base)
-    }
-
-    var int8: Int8 {
-        return Int8(base)
-    }
-
-    var int16: Int16 {
-        return Int16(base)
-    }
-
-    var int32: Int32 {
-        return Int32(base)
-    }
-
-    var int64: Int64 {
-        return Int64(base)
-    }
-
-    var uInt: UInt {
-        return UInt(base)
-    }
-
-    var uInt8: UInt8 {
-        return UInt8(base)
-    }
-
-    var uInt16: UInt16 {
-        return UInt16(base)
-    }
-
-    var uInt32: UInt32 {
-        return UInt32(base)
-    }
-
-    var uInt64: UInt64 {
-        return UInt64(base)
-    }
 }

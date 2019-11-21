@@ -40,8 +40,7 @@ public enum NetworkType {
     }
 }
 
-extension Reachability: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == Reachability {
+public extension Reachability {
 
     static var networkType: NetworkType {
         guard let reachability: Reachability = Reachability() else { return .unknown }
@@ -53,7 +52,7 @@ public extension EFFoundationWrapper where Base == Reachability {
             case .wifi:
                 return .wifi
             case .cellular:
-                return Self.wwanNetworkType
+                return Reachability.wwanNetworkType
             }
         } catch {
             return .unknown
@@ -85,7 +84,7 @@ public extension EFFoundationWrapper where Base == Reachability {
     static var ipAddresses: String? {
         var addresses: [String] = [String]()
 
-        var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+        var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
             var ptr = ifaddr
             while (ptr != nil) {

@@ -5,16 +5,13 @@
 //  Created by EyreFree on 2019/8/15.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
 import UIKit
 
-extension UIView: EFFoundationCompatible { }
-
-#if os(iOS)
-public extension EFFoundationWrapper where Base == UIView {
+public extension UIView {
 
     var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = base
+        var parentResponder: UIResponder? = self
         while parentResponder != nil {
             parentResponder = parentResponder?.next
             if let viewController = parentResponder as? UIViewController {
@@ -24,5 +21,4 @@ public extension EFFoundationWrapper where Base == UIView {
         return nil
     }
 }
-#endif
 #endif

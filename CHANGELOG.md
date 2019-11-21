@@ -2,6 +2,12 @@
 
 -----
 
+## [1.2.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.2.0) (2019-11-22)
+
+* Remove group.
+
+---
+
 ## [1.1.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.1.2) (2019-11-20)
 
 * Fix visibility.

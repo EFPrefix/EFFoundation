@@ -10,6 +10,7 @@ import UIKit
 import CoreGraphics
 
 public extension UIColor {
+
     convenience init(hexRGB: UInt, alpha: CGFloat = 1.0) {
         self.init(
             red: CGFloat((hexRGB & 0xFF0000) >> 16) / 255.0,
@@ -26,28 +27,24 @@ public extension UIColor {
         }
         self.init(hexRGB: hex, alpha: alpha)
     }
-}
-
-extension UIColor: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == UIColor {
-
+    
     #if canImport(CoreImage)
-    var ciColor: CIColor {
-        return CIColor(color: base)
+    func ciColor() -> CIColor {
+        return CIColor(color: self)
     }
     #endif
 
-    var cgColor: CGColor {
-        return base.cgColor
+    func cgColor() -> CGColor {
+        return cgColor
     }
     
     static func white(white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
-        return Base.init(white: white, alpha: alpha)
+        return self.init(white: white, alpha: alpha)
     }
     
     static func black(black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
         let white: CGFloat = 1.0 - black
-        return Self.white(white: white, alpha: alpha)
+        return self.white(white: white, alpha: alpha)
     }
 }
 #endif

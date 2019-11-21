@@ -8,11 +8,10 @@
 #if os(iOS)
 import UIKit
 
-extension UIViewController: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == UIViewController {
+public extension UIViewController {
 
     var zTopView: UIView {
-        var recentVC = base
+        var recentVC = self
         while let parentVC = recentVC.parent {
             recentVC = parentVC
         }

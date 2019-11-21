@@ -9,8 +9,7 @@
 import UIKit
 import CoreGraphics
 
-extension UIFont: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == UIFont {
+public extension UIFont {
 
     // MARK: - PingFangSC
     static func pingFangSCRegular(ofSize: CGFloat) -> UIFont {
@@ -18,31 +17,31 @@ public extension EFFoundationWrapper where Base == UIFont {
     }
 
     static func pingFangSCUltralight(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Ultralight", size: ofSize) ?? Self.pingFangSCThin(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Ultralight", size: ofSize) ?? UIFont.pingFangSCThin(ofSize: ofSize)
     }
 
     static func pingFangSCLight(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Light", size: ofSize) ?? Self.pingFangSCRegular(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Light", size: ofSize) ?? UIFont.pingFangSCRegular(ofSize: ofSize)
     }
 
     static func pingFangSCThin(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Thin", size: ofSize) ?? Self.pingFangSCLight(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Thin", size: ofSize) ?? UIFont.pingFangSCLight(ofSize: ofSize)
     }
 
     static func pingFangSCMedium(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Medium", size: ofSize) ?? Self.pingFangSCRegular(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Medium", size: ofSize) ?? UIFont.pingFangSCRegular(ofSize: ofSize)
     }
 
     static func pingFangSCSemibold(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Semibold", size: ofSize) ?? Self.pingFangSCMedium(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Semibold", size: ofSize) ?? UIFont.pingFangSCMedium(ofSize: ofSize)
     }
 
     static func pingFangSCBold(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-Bold", size: ofSize) ?? Self.pingFangSCSemibold(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-Bold", size: ofSize) ?? UIFont.pingFangSCSemibold(ofSize: ofSize)
     }
 
     static func pingFangSCBoldItalic(ofSize: CGFloat) -> UIFont {
-        return UIFont.init(name: "PingFangSC-BoldItalic", size: ofSize) ?? Self.pingFangSCBold(ofSize: ofSize)
+        return UIFont.init(name: "PingFangSC-BoldItalic", size: ofSize) ?? UIFont.pingFangSCBold(ofSize: ofSize)
     }
 }
 #endif

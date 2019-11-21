@@ -8,24 +8,22 @@
 import Foundation
 import CoreGraphics
 
-extension String: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == String {
+public extension String {
 
-    // Convert
     var attributedString: NSAttributedString {
-        return NSAttributedString(string: base)
+        return NSAttributedString(string: self)
     }
 
     var mutableAttributedString: NSMutableAttributedString {
-        return NSMutableAttributedString(string: base)
+        return NSMutableAttributedString(string: self)
     }
 
     var nsString: NSString {
-        return base as NSString
+        return self as NSString
     }
 
     var bool: Bool? {
-        switch base.lowercased() {
+        switch self.lowercased() {
         case "true":
             return true
         case "false":
@@ -36,95 +34,97 @@ public extension EFFoundationWrapper where Base == String {
     }
 
     var cgFloat: CGFloat? {
-        guard let double = base.ef.double else { return nil }
+        guard let double = self.double else { return nil }
         return CGFloat(double)
     }
 
     var double: Double? {
-        return Double(base)
+        return Double(self)
     }
 
     var float: Float? {
-        return Float(base)
+        return Float(self)
     }
 
     var int: Int? {
-        return Int(base)
+        return Int(self)
     }
 
     var int8: Int8? {
-        return Int8(base)
+        return Int8(self)
     }
 
     var int16: Int16? {
-        return Int16(base)
+        return Int16(self)
     }
 
     var int32: Int32? {
-        return Int32(base)
+        return Int32(self)
     }
 
     var int64: Int64? {
-        return Int64(base)
+        return Int64(self)
     }
 
     var uInt: UInt? {
-        return UInt(base)
+        return UInt(self)
     }
 
     var uInt8: UInt8? {
-        return UInt8(base)
+        return UInt8(self)
     }
 
     var uInt16: UInt16? {
-        return UInt16(base)
+        return UInt16(self)
     }
 
     var uInt32: UInt32? {
-        return UInt32(base)
+        return UInt32(self)
     }
 
     var uInt64: UInt64? {
-        return UInt64(base)
+        return UInt64(self)
     }
+}
 
-    // Common
+public extension String {
+
     var clean: String {
-        return base.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
     func replace(_ string: String, with: String, options: String.CompareOptions = [], range: Range<String.Index>? = nil) -> String {
-        return base.replacingOccurrences(of: string, with: with, options: options, range: range)
+        return replacingOccurrences(of: string, with: with, options: options, range: range)
     }
 
     func replacePrefix(string: String, with: String) -> String {
-        if base.hasPrefix(string) {
-            return with + String(base.dropFirst(string.count))
+        if self.hasPrefix(string) {
+            return with + String(self.dropFirst(string.count))
         }
-        return base
+        return self
     }
 
     func replaceSuffix(string: String, with: String) -> String {
-        if base.hasSuffix(string) {
-            return "\(base.dropLast(string.count))" + with
+        if self.hasSuffix(string) {
+            return "\(self.dropLast(string.count))" + with
         }
-        return base
+        return self
     }
 
     func remove(string: String) -> String {
-        return replace(string, with: "")
+        return self.replace(string, with: "")
     }
 
     func removePrefix(string: String) -> String {
-        return replacePrefix(string: string, with: "")
+        return self.replacePrefix(string: string, with: "")
     }
 
     func removeSuffix(string: String) -> String {
-        return replaceSuffix(string: string, with: "")
+        return self.replaceSuffix(string: string, with: "")
     }
 
     func i18n(comment: String = "") -> String {
-        return NSLocalizedString(base, comment: comment)
+        return NSLocalizedString(self, comment: comment)
     }
 
     static func random(length: Int) -> String {
@@ -141,7 +141,7 @@ public extension EFFoundationWrapper where Base == String {
     }
 
     func dictionary(using: String.Encoding = String.Encoding.utf8) -> Any? {
-        if let data = base.data(using: using) {
+        if let data = self.data(using: using) {
             do {
                 return try JSONSerialization.jsonObject(
                     with: data, options: JSONSerialization.ReadingOptions.allowFragments

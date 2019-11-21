@@ -8,8 +8,7 @@
 #if os(iOS)
 import UIKit
 
-extension CGSize: EFFoundationCompatible { }
-public extension EFFoundationWrapper where Base == CGSize {
+public extension CGSize {
     
     static var screen: CGSize {
         return UIScreen.main.bounds.size
