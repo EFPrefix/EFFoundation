@@ -14,8 +14,8 @@ import UIKit
 public extension UIApplication {
     static var shared: UIApplication? {
         let selector = NSSelectorFromString("sharedApplication")
-        guard Self.responds(to: selector) else { return nil }
-        return Self.perform(selector).takeUnretainedValue() as? UIApplication
+        guard UIApplication.responds(to: selector) else { return nil }
+        return UIApplication.perform(selector).takeUnretainedValue() as? UIApplication
     }
 }
 
