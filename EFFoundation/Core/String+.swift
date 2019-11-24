@@ -152,4 +152,30 @@ public extension String {
         }
         return nil
     }
+    
+    func truncate(to length: Int, addEllipsis: Bool = false) -> String  {
+        if length > count { return self }
+
+        let endPosition = self.index(self.startIndex, offsetBy: length)
+        let trimmed = self[..<endPosition]
+
+        if addEllipsis {
+            return "\(trimmed)..."
+        }
+        return String(trimmed)
+    }
+    
+    func withPrefix(_ prefix: String) -> String {
+        if self.hasPrefix(prefix) { return self }
+        return "\(prefix)\(self)"
+    }
+    
+    func conform(regex: String) -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
+    }
+    
+    var isEmail: Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        return conform(regex: emailRegEx)
+    }
 }

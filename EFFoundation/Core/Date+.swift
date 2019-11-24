@@ -14,26 +14,46 @@ public extension Date {
     }
 
     var isThisWeek: Bool {
-        guard isThisYear else { return false }
-        let calendar = Calendar.current
-        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: Date())
-        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: self)
-        return nowCmps.weekOfYear == selfCmps.weekOfYear
+        return sameWeek(with: Date())
     }
 
     var isThisMonth: Bool {
-        guard isThisYear else { return false }
-        let calendar = Calendar.current
-        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: Date())
-        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: self)
-        return nowCmps.month == selfCmps.month
+        return sameMonth(with: Date())
     }
 
     var isThisYear: Bool {
+        return sameYear(with: Date())
+    }
+    
+    func sameYear(with date: Date) -> Bool {
         let calendar = Calendar.current
-        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.year], from: Date())
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.year], from: date)
         let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.year], from: self)
         return nowCmps.year == selfCmps.year
+    }
+    
+    func sameMonth(with date: Date) -> Bool {
+        guard sameYear(with: date) else { return false }
+        let calendar = Calendar.current
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: date)
+        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.month], from: self)
+        return nowCmps.month == selfCmps.month
+    }
+    
+    func sameWeek(with date: Date) -> Bool {
+        guard sameYear(with: date) else { return false }
+        let calendar = Calendar.current
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: date)
+        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.weekOfYear], from: self)
+        return nowCmps.weekOfYear == selfCmps.weekOfYear
+    }
+    
+    func sameDay(with date: Date) -> Bool {
+        guard sameMonth(with: date) else { return false }
+        let calendar = Calendar.current
+        let nowCmps: DateComponents = calendar.dateComponents([Calendar.Component.day], from: date)
+        let selfCmps: DateComponents = calendar.dateComponents([Calendar.Component.day], from: self)
+        return nowCmps.day == selfCmps.day
     }
 
     func before(nHour: Int) -> Date {
@@ -65,5 +85,18 @@ public extension Date {
         dateFormatter.dateFormat = format
         dateFormatter.timeZone = NSTimeZone.local
         return dateFormatter.string(from: self)
+    }
+    
+    func readable() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        
+        if Date().sameDay(with: self) == true {
+            dateFormatter.dateFormat = "HH:mm"
+            return dateFormatter.string(from: self).uppercased()
+        } else {
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            return dateFormatter.string(from: self).uppercased()
+        }
     }
 }
