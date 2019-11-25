@@ -43,7 +43,7 @@ public enum NetworkType {
 public extension Reachability {
 
     static var networkType: NetworkType {
-        guard let reachability: Reachability = Reachability() else { return .unknown }
+        guard let reachability: Reachability = try? Reachability() else { return .unknown }
         do {
             try reachability.startNotifier()
             switch reachability.connection {
@@ -53,6 +53,8 @@ public extension Reachability {
                 return .wifi
             case .cellular:
                 return Reachability.wwanNetworkType
+            case .unavailable:
+                return NetworkType.noConnection
             }
         } catch {
             return .unknown
