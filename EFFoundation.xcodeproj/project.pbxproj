@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1254EF77238D36D800890E91 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF76238D36D800890E91 /* Bool+.swift */; };
+		1254EF78238D36D800890E91 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF76238D36D800890E91 /* Bool+.swift */; };
+		1254EF79238D36D800890E91 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF76238D36D800890E91 /* Bool+.swift */; };
+		1254EF7A238D36D800890E91 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF76238D36D800890E91 /* Bool+.swift */; };
+		1254EF7C238D371900890E91 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF7B238D371900890E91 /* Character+.swift */; };
+		1254EF7D238D371900890E91 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF7B238D371900890E91 /* Character+.swift */; };
+		1254EF7E238D371900890E91 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF7B238D371900890E91 /* Character+.swift */; };
+		1254EF7F238D371900890E91 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF7B238D371900890E91 /* Character+.swift */; };
+		1254EF81238D384F00890E91 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF80238D384F00890E91 /* Dictionary+.swift */; };
+		1254EF82238D384F00890E91 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF80238D384F00890E91 /* Dictionary+.swift */; };
+		1254EF83238D384F00890E91 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF80238D384F00890E91 /* Dictionary+.swift */; };
+		1254EF84238D384F00890E91 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254EF80238D384F00890E91 /* Dictionary+.swift */; };
 		1258F81F2386F851005FD140 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258F8042386F850005FD140 /* CGRect+.swift */; };
 		1258F8202386F851005FD140 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258F8042386F850005FD140 /* CGRect+.swift */; };
 		1258F8212386F851005FD140 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258F8042386F850005FD140 /* CGRect+.swift */; };
@@ -129,6 +141,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1254EF76238D36D800890E91 /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bool+.swift"; path = "EFFoundation/Core/Bool+.swift"; sourceTree = "<group>"; };
+		1254EF7B238D371900890E91 /* Character+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Character+.swift"; path = "EFFoundation/Core/Character+.swift"; sourceTree = "<group>"; };
+		1254EF80238D384F00890E91 /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dictionary+.swift"; path = "EFFoundation/Core/Dictionary+.swift"; sourceTree = "<group>"; };
 		1258F8042386F850005FD140 /* CGRect+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+.swift"; path = "EFFoundation/Core/CGRect+.swift"; sourceTree = "<group>"; };
 		1258F8052386F850005FD140 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "EFFoundation/Core/UIImage+.swift"; sourceTree = "<group>"; };
 		1258F8062386F850005FD140 /* UIControl+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIControl+.swift"; path = "EFFoundation/Core/UIControl+.swift"; sourceTree = "<group>"; };
@@ -224,6 +239,8 @@
 				1258F8122386F851005FD140 /* Array+.swift */,
 				1258F80C2386F850005FD140 /* BinaryFloatingPoint+.swift */,
 				1258F80E2386F850005FD140 /* BinaryInteger+.swift */,
+				1254EF76238D36D800890E91 /* Bool+.swift */,
+				1254EF7B238D371900890E91 /* Character+.swift */,
 				1258F81E2386F851005FD140 /* CGColor+.swift */,
 				1258F8192386F851005FD140 /* CGFloat+.swift */,
 				1258F81B2386F851005FD140 /* CGImage.swift */,
@@ -233,6 +250,7 @@
 				1258F81A2386F851005FD140 /* CIImage+.swift */,
 				1261E313238AB99200377DBD /* Comparable+.swift */,
 				1258F8092386F850005FD140 /* Date+.swift */,
+				1254EF80238D384F00890E91 /* Dictionary+.swift */,
 				1258F80A2386F850005FD140 /* EFFoundation.swift */,
 				1258F81C2386F851005FD140 /* NSColor+.swift */,
 				1258F80B2386F850005FD140 /* NSImage+.swift */,
@@ -509,12 +527,14 @@
 				1258F8892386F851005FD140 /* CGColor+.swift in Sources */,
 				1258F8612386F851005FD140 /* UIImageView+.swift in Sources */,
 				1258F8792386F851005FD140 /* CIImage+.swift in Sources */,
+				1254EF83238D384F00890E91 /* Dictionary+.swift in Sources */,
 				1258F8452386F851005FD140 /* UITableView+.swift in Sources */,
 				1258F82D2386F851005FD140 /* UINavigationController+.swift in Sources */,
 				1258F8212386F851005FD140 /* CGRect+.swift in Sources */,
 				1258F8652386F851005FD140 /* UIFont+.swift in Sources */,
 				1258F84D2386F851005FD140 /* CIColor+.swift in Sources */,
 				1258F8352386F851005FD140 /* Date+.swift in Sources */,
+				1254EF7E238D371900890E91 /* Character+.swift in Sources */,
 				1258F8512386F851005FD140 /* UIViewController+.swift in Sources */,
 				1258F8252386F851005FD140 /* UIImage+.swift in Sources */,
 				1258F8412386F851005FD140 /* BinaryFloatingPoint+.swift in Sources */,
@@ -525,6 +545,7 @@
 				1258F8812386F851005FD140 /* NSColor+.swift in Sources */,
 				1258F8692386F851005FD140 /* URL+.swift in Sources */,
 				1258F8552386F851005FD140 /* UIColor+.swift in Sources */,
+				1254EF79238D36D800890E91 /* Bool+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,12 +566,14 @@
 				1258F8882386F851005FD140 /* CGColor+.swift in Sources */,
 				1258F8602386F851005FD140 /* UIImageView+.swift in Sources */,
 				1258F8782386F851005FD140 /* CIImage+.swift in Sources */,
+				1254EF82238D384F00890E91 /* Dictionary+.swift in Sources */,
 				1258F8442386F851005FD140 /* UITableView+.swift in Sources */,
 				1258F82C2386F851005FD140 /* UINavigationController+.swift in Sources */,
 				1258F8202386F851005FD140 /* CGRect+.swift in Sources */,
 				1258F8642386F851005FD140 /* UIFont+.swift in Sources */,
 				1258F84C2386F851005FD140 /* CIColor+.swift in Sources */,
 				1258F8342386F851005FD140 /* Date+.swift in Sources */,
+				1254EF7D238D371900890E91 /* Character+.swift in Sources */,
 				1258F8502386F851005FD140 /* UIViewController+.swift in Sources */,
 				1258F8242386F851005FD140 /* UIImage+.swift in Sources */,
 				1258F8402386F851005FD140 /* BinaryFloatingPoint+.swift in Sources */,
@@ -561,6 +584,7 @@
 				1258F8802386F851005FD140 /* NSColor+.swift in Sources */,
 				1258F8682386F851005FD140 /* URL+.swift in Sources */,
 				1258F8542386F851005FD140 /* UIColor+.swift in Sources */,
+				1254EF78238D36D800890E91 /* Bool+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,12 +605,14 @@
 				1258F88A2386F851005FD140 /* CGColor+.swift in Sources */,
 				1258F8622386F851005FD140 /* UIImageView+.swift in Sources */,
 				1258F87A2386F851005FD140 /* CIImage+.swift in Sources */,
+				1254EF84238D384F00890E91 /* Dictionary+.swift in Sources */,
 				1258F8462386F851005FD140 /* UITableView+.swift in Sources */,
 				1258F82E2386F851005FD140 /* UINavigationController+.swift in Sources */,
 				1258F8222386F851005FD140 /* CGRect+.swift in Sources */,
 				1258F8662386F851005FD140 /* UIFont+.swift in Sources */,
 				1258F84E2386F851005FD140 /* CIColor+.swift in Sources */,
 				1258F8362386F851005FD140 /* Date+.swift in Sources */,
+				1254EF7F238D371900890E91 /* Character+.swift in Sources */,
 				1258F8522386F851005FD140 /* UIViewController+.swift in Sources */,
 				1258F8262386F851005FD140 /* UIImage+.swift in Sources */,
 				1258F8422386F851005FD140 /* BinaryFloatingPoint+.swift in Sources */,
@@ -597,6 +623,7 @@
 				1258F8822386F851005FD140 /* NSColor+.swift in Sources */,
 				1258F86A2386F851005FD140 /* URL+.swift in Sources */,
 				1258F8562386F851005FD140 /* UIColor+.swift in Sources */,
+				1254EF7A238D36D800890E91 /* Bool+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,12 +644,14 @@
 				1258F8872386F851005FD140 /* CGColor+.swift in Sources */,
 				1258F85F2386F851005FD140 /* UIImageView+.swift in Sources */,
 				1258F8772386F851005FD140 /* CIImage+.swift in Sources */,
+				1254EF81238D384F00890E91 /* Dictionary+.swift in Sources */,
 				1258F8432386F851005FD140 /* UITableView+.swift in Sources */,
 				1258F82B2386F851005FD140 /* UINavigationController+.swift in Sources */,
 				1258F81F2386F851005FD140 /* CGRect+.swift in Sources */,
 				1258F8632386F851005FD140 /* UIFont+.swift in Sources */,
 				1258F84B2386F851005FD140 /* CIColor+.swift in Sources */,
 				1258F8332386F851005FD140 /* Date+.swift in Sources */,
+				1254EF7C238D371900890E91 /* Character+.swift in Sources */,
 				1258F84F2386F851005FD140 /* UIViewController+.swift in Sources */,
 				1258F8232386F851005FD140 /* UIImage+.swift in Sources */,
 				1258F83F2386F851005FD140 /* BinaryFloatingPoint+.swift in Sources */,
@@ -633,6 +662,7 @@
 				1258F87F2386F851005FD140 /* NSColor+.swift in Sources */,
 				1258F8672386F851005FD140 /* URL+.swift in Sources */,
 				1258F8532386F851005FD140 /* UIColor+.swift in Sources */,
+				1254EF77238D36D800890E91 /* Bool+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

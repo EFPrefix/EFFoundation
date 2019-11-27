@@ -66,3 +66,26 @@ public extension BinaryInteger {
         return UInt64(self)
     }
 }
+
+public extension BinaryInteger {
+
+    var year: TimeInterval {
+        return 365 * day
+    }
+
+    var day: TimeInterval {
+        return 24 * hour
+    }
+
+    var hour: TimeInterval {
+        return 60 * minute
+    }
+
+    var minute: TimeInterval {
+        return 60 * second
+    }
+
+    var second: TimeInterval {
+        return TimeInterval(self)
+    }
+}
