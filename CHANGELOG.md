@@ -2,6 +2,18 @@
 
 -----
 
+## [1.2.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.2.3) (2019-11-27)
+
+* ExSwift.
+
+---
+
+## [1.2.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.2.2) (2019-11-23)
+
+* Fix.
+
+---
+
 ## [1.2.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.2.0) (2019-11-22)
 
 * Fix.
