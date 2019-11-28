@@ -69,16 +69,16 @@ public extension BinaryInteger {
 
 public extension BinaryInteger {
 
-    var year: TimeInterval {
-        return 365 * day
+    var week: TimeInterval {
+        return 604800 * second
     }
 
     var day: TimeInterval {
-        return 24 * hour
+        return 86400 * second
     }
 
     var hour: TimeInterval {
-        return 60 * minute
+        return 3600 * second
     }
 
     var minute: TimeInterval {

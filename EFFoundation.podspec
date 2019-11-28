@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.subspec 'Core' do |core|
-    core.source_files = 'EFFoundation/Core/*.{h,swift}'
+    core.source_files = 'EFFoundation/Core/**/*.{h,swift}'
   end
   
   s.subspec 'Attributes' do |attributes|
