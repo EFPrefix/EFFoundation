@@ -2,6 +2,12 @@
 
 -----
 
+## [1.3.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.3.0) (2019-11-28)
+
+* swift-algorithm-club.
+
+---
+
 ## [1.3.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.3.0) (2019-11-28)
 
 * swift-algorithm-club.

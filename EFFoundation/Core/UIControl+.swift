@@ -9,8 +9,24 @@
 import UIKit
 
 public extension UIControl {
-
-    private static var blockDict: [UInt: ((UIControl) -> Void)?] = [:]
+    
+    private typealias BlockDictType = [UInt: ((UIControl) -> Void)?]
+    private struct AssociatedKeys {
+        static var blockDict: String = "blockDict"
+    }
+    private var blockDict: BlockDictType {
+        get {
+            if let dict = objc_getAssociatedObject(self, &AssociatedKeys.blockDict) as? BlockDictType {
+                return dict
+            }
+            let newDict = BlockDictType()
+            objc_setAssociatedObject(self, &AssociatedKeys.blockDict, newDict, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return newDict
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.blockDict, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
 
     private func selectorFor(_ event: UIControl.Event) -> Selector? {
         switch event {
@@ -63,7 +79,7 @@ public extension UIControl {
     }
 
     private func callActionFor(_ event: UIControl.Event) {
-        UIButton.blockDict[event.rawValue]??(self)
+        blockDict[event.rawValue]??(self)
     }
 
     @objc private func touchDown() {
@@ -149,7 +165,7 @@ public extension UIControl {
 
     func addEventHandler(_ event: UIControl.Event, action: ((UIControl) -> Void)?) {
         guard let selector = selectorFor(event) else { return }
-        UIButton.blockDict.updateValue(action, forKey: event.rawValue)
+        blockDict.updateValue(action, forKey: event.rawValue)
         if nil == action {
             removeTarget(self, action: selector, for: event)
         } else {
