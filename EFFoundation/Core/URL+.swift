@@ -10,7 +10,7 @@ import Foundation
 public extension URL {
 
     init?(unexpectedString: String?) {
-        if let tryString = unexpectedString?.clean.replacePrefix(string: "http:", with: "https:") {
+        if let tryString = unexpectedString?.clean {
             if nil != URL(string: tryString) {
                 self.init(string: tryString)
             } else {
