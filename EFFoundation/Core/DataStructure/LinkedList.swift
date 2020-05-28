@@ -1,3 +1,4 @@
+// https://github.com/raywenderlich/swift-algorithm-club
 public final class LinkedList<T> {
     
     /// Linked List's Node Class Declaration

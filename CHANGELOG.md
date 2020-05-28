@@ -2,6 +2,12 @@
 
 -----
 
+## [1.4.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.0) (2020-05-28)
+
+* Add.
+
+---
+
 ## [1.3.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.3.2) (2020-02-26)
 
 * Fix url.

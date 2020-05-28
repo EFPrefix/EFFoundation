@@ -46,5 +46,19 @@ public extension UIColor {
         let white: CGFloat = 1.0 - black
         return self.white(white: white, alpha: alpha)
     }
+    
+    /// 获取两个 UIColor 均值（只支持 RGB 空间颜色）
+    func mixWith(color: UIColor, percentage: CGFloat) -> UIColor {
+        if let rgbArr1 = self.cgColor().components, let rgbArr2 = color.cgColor().components {
+            let selfPercentage: CGFloat = 1 - percentage
+            return UIColor(
+                red: rgbArr1[0] * selfPercentage + rgbArr2[0] * percentage,
+                green: rgbArr1[1] * selfPercentage + rgbArr2[1] * percentage,
+                blue: rgbArr1[2] * selfPercentage + rgbArr2[2] * percentage,
+                alpha: 1.0
+            )
+        }
+        return self
+    }
 }
 #endif

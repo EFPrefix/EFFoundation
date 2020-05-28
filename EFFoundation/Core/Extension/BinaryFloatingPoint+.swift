@@ -1,14 +1,14 @@
 //
-//  BinaryInteger+.swift
+//  BinaryFloatingPoint+.swift
 //  EFFoundation
 //
-//  Created by EyreFree on 2019/8/14.
+//  Created by EyreFree on 2019/8/20.
 //
 
 import Foundation
 import CoreGraphics
 
-public extension BinaryInteger {
+public extension BinaryFloatingPoint {
 
     var bool: Bool {
         return 0 != self
@@ -64,28 +64,5 @@ public extension BinaryInteger {
 
     var uInt64: UInt64 {
         return UInt64(self)
-    }
-}
-
-public extension BinaryInteger {
-
-    var week: TimeInterval {
-        return 604800 * second
-    }
-
-    var day: TimeInterval {
-        return 86400 * second
-    }
-
-    var hour: TimeInterval {
-        return 3600 * second
-    }
-
-    var minute: TimeInterval {
-        return 60 * second
-    }
-
-    var second: TimeInterval {
-        return TimeInterval(self)
     }
 }

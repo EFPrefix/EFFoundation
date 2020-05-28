@@ -24,9 +24,9 @@ public extension String {
     
     var bool: Bool? {
         switch self.clean.lowercased() {
-        case "true", "yes":
+        case "true", "yes", "1":
             return true
-        case "false", "no":
+        case "false", "no", "0":
             return false
         default:
             return nil

@@ -1,3 +1,4 @@
+// https://github.com/raywenderlich/swift-algorithm-club
 /*
  A fixed-size sequence of n bits. Bits have indices 0 to n-1.
  */

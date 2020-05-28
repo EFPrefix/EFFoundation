@@ -13,4 +13,8 @@ public extension Bool {
         self = !self
         return self
     }
+    
+    var nsNumber: NSNumber {
+        return NSNumber(value: self)
+    }
 }

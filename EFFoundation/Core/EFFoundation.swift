@@ -11,14 +11,6 @@ import Foundation
 #if canImport(UIKit)
 import UIKit
 
-public extension UIApplication {
-    static var shared: UIApplication? {
-        let selector = NSSelectorFromString("sharedApplication")
-        guard UIApplication.responds(to: selector) else { return nil }
-        return UIApplication.perform(selector).takeUnretainedValue() as? UIApplication
-    }
-}
-
 public func hideKeyboard() {
     UIApplication.shared?.keyWindow?.endEditing(true)
 }

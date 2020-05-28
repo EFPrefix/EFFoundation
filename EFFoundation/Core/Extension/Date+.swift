@@ -17,10 +17,13 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
-    func readable() -> String {
+    var readable: String {
         var format = "yyyy-MM-dd HH:mm"
-        if Date().sameDay(with: self) == true {
+        let currentDate: Date = Date()
+        if currentDate.sameDay(with: self) == true {
             format = "HH:mm"
+        } else if currentDate.sameYear(with: self) {
+            format = "MM-dd HH:mm"
         }
         return string(format: format)
     }
