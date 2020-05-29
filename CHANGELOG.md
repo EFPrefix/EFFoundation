@@ -2,7 +2,13 @@
 
 -----
 
-## [1.4.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.0) (2020-05-28)
+## [1.4.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.2) (2020-05-29)
+
+* Update deployment_target.
+
+---
+
+## [1.4.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.1) (2020-05-28)
 
 * Update dependency.
 

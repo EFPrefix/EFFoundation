@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '1.4.1'
+  s.version          = '1.4.2'
   s.summary          = 'EFFoundation.'
   
   s.description      = <<-DESC
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Device' do |device|
-    device.ios.deployment_target = '8.0'
+    device.ios.deployment_target = '9.3'
     
     device.source_files = 'EFFoundation/Device/*.{h,swift}'
     device.dependency 'EFFoundation/Core'
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Complete' do |complete|
-    complete.ios.deployment_target = '8.0'
+    complete.ios.deployment_target = '9.3'
 
     complete.dependency 'EFFoundation/Core'
     complete.dependency 'EFFoundation/Attributes'
