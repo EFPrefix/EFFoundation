@@ -2,6 +2,12 @@
 
 -----
 
+## [1.4.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.3) (2020-05-29)
+
+* Fix goBack.
+
+---
+
 ## [1.4.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.2) (2020-05-29)
 
 * Update deployment_target.

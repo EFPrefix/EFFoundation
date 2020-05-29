@@ -22,7 +22,7 @@ public extension UIViewController {
     }
     
     func goBack(animated: Bool, completion: (() -> Void)? = nil) {
-        if let navigationController = self.navigationController, navigationController.viewControllers.count == 1 {
+        if let navigationController = self.navigationController, navigationController.viewControllers.count > 1 {
             navigationController.popViewController(animated: animated) { [weak self] in
                 guard let _ = self else { return }
                 completion?()
