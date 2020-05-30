@@ -2,6 +2,12 @@
 
 -----
 
+## [1.4.4](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.4) (2020-05-30)
+
+* Fix statusBarHeight.
+
+---
+
 ## [1.4.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.3) (2020-05-29)
 
 * Fix goBack.
