@@ -9,11 +9,6 @@
 import Foundation
 
 public extension Bool {
-    mutating func toggle() -> Bool {
-        self = !self
-        return self
-    }
-    
     var nsNumber: NSNumber {
         return NSNumber(value: self)
     }
