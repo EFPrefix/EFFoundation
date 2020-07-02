@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import EFFoundation
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        printLog("2333")
+        printLog(1 + 2)
     }
 
 

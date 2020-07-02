@@ -18,10 +18,10 @@ public func hideKeyboard() {
 #endif
 
 
-public func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+public func printLog<T>(_ message: @autoclosure () -> T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
     let dformatter: DateFormatter = DateFormatter()
     dformatter.dateFormat = "HH:mm:ss"
-    print("\(dformatter.string(from: Date())), \((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+    print("\(dformatter.string(from: Date())), \((file as NSString).lastPathComponent)[\(line)], \(method): \(message())")
     #endif
 }
