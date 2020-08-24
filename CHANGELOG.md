@@ -2,6 +2,18 @@
 
 -----
 
+## [1.4.7](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.7) (2020-08-24)
+
+* Add `isAppExtension`.
+
+---
+
+## [1.4.6](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.6) (2020-06-18)
+
+* Fix `keyWindow`.
+
+---
+
 ## [1.4.5](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.5) (2020-06-01)
 
 * Fix issue [#7](https://github.com/EFPrefix/EFFoundation/issues/7).
