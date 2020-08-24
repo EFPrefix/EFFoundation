@@ -12,7 +12,21 @@ import Foundation
 import UIKit
 
 public extension UIApplication {
+    
+    static let isAppExtension: Bool = {
+        var isAppExtension: Bool = false
+        DispatchQueue.once {
+            let bundleUrl: URL = Bundle.main.bundleURL
+            let bundlePathExtension: String = bundleUrl.pathExtension
+            isAppExtension = bundlePathExtension == "appex"
+        }
+        return isAppExtension
+    }()
+    
     static let shared: UIApplication? = {
+        if isAppExtension {
+            return nil
+        }
         let selector = NSSelectorFromString("sharedApplication")
         guard UIApplication.responds(to: selector) else { return nil }
         return UIApplication.perform(selector).takeUnretainedValue() as? UIApplication
