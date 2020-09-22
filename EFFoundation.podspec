@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '1.4.7'
+  s.version          = '1.4.8'
   s.summary          = 'EFFoundation.'
   
   s.description      = <<-DESC
@@ -39,11 +39,11 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Device' do |device|
-    device.ios.deployment_target = '9.3'
+    device.ios.deployment_target = '9.0'
     
     device.source_files = 'EFFoundation/Device/*.{h,swift}'
     device.dependency 'EFFoundation/Core'
-    device.dependency 'DeviceKit', '>= 3.2.0'
+    device.dependency 'DeviceKit', '>= 4.1.0'
   end
   
   s.subspec 'Reachability' do |reachability|
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Complete' do |complete|
-    complete.ios.deployment_target = '9.3'
+    complete.ios.deployment_target = '9.0'
 
     complete.dependency 'EFFoundation/Core'
     complete.dependency 'EFFoundation/Attributes'

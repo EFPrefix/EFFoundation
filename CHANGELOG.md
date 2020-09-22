@@ -2,6 +2,12 @@
 
 -----
 
+## [1.4.8](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.8) (2020-09-22)
+
+* Update `DeviceKit`.
+
+---
+
 ## [1.4.7](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.7) (2020-08-24)
 
 * Add `isAppExtension`.
