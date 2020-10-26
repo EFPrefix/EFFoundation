@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         
         printLog("2333")
         printLog(1 + 2)
+        let bottom = CGFloat.bottomSafeAreaHeight
+        printLog("bottomSafeAreaHeight:\(bottom)")
     }
 
 
