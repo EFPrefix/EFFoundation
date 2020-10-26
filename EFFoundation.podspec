@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
     
     device.source_files = 'EFFoundation/Device/*.{h,swift}'
     device.dependency 'EFFoundation/Core'
-    device.dependency 'DeviceKit', '4.2.1'
+    device.dependency 'DeviceKit', '>= 4.2.1'
   end
   
   s.subspec 'Reachability' do |reachability|
