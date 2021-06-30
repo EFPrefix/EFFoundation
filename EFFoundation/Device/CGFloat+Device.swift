@@ -6,6 +6,7 @@
 //
 
 #if os(iOS)
+#if canImport(DeviceKit)
 import CoreGraphics
 import UIKit
 
@@ -17,4 +18,5 @@ public extension CGFloat {
     static let bottomSafeAreaHeight: CGFloat = UIDevice.isiPhoneXSeries ? 34 : 0
     static let tabBarHeight: CGFloat = bottomSafeAreaHeight + 49
 }
+#endif
 #endif

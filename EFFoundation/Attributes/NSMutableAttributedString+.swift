@@ -6,6 +6,7 @@
 //
 
 import Foundation
+#if canImport(SwiftyAttributes)
 import SwiftyAttributes
 
 public extension NSMutableAttributedString {
@@ -131,3 +132,4 @@ public extension NSMutableAttributedString {
         return updateAttributes(attributes, range: range)
     }
 }
+#endif

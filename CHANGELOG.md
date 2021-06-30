@@ -2,6 +2,18 @@
 
 -----
 
+## [1.4.10](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.10) (2021-06-30)
+
+* Add more files to SPM package.
+
+---
+
+## [1.4.9](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.9) (2020-10-26)
+
+* Update `DeviceKit`.
+
+---
+
 ## [1.4.8](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.8) (2020-09-22)
 
 * Update `DeviceKit`.

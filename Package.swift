@@ -34,7 +34,7 @@ let package = Package(
         .library(name: "EFFoundation", targets: ["EFFoundation"])
     ],
     targets: [
-        .target(name: "EFFoundation", path: "EFFoundation/Core")
+        .target(name: "EFFoundation", path: "EFFoundation", exclude: ["EFFoundation.h", "Info.plist", "Info-tvOS.plist"])
     ],
     swiftLanguageVersions: [.v5]
 )

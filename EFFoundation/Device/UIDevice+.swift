@@ -7,6 +7,7 @@
 
 #if os(iOS)
 import UIKit
+#if canImport(DeviceKit)
 import DeviceKit
 
 public extension UIDevice {
@@ -29,4 +30,5 @@ public extension UIDevice {
         return result
     }()
 }
+#endif
 #endif
