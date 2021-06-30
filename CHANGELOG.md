@@ -2,6 +2,12 @@
 
 -----
 
+## [1.4.11](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.11) (2021-06-30)
+
+* Fix SPM.
+
+---
+
 ## [1.4.10](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.10) (2021-06-30)
 
 * Add more files to SPM package.
