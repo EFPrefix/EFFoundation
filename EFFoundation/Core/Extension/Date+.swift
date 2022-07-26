@@ -20,7 +20,13 @@ public extension Date {
     var readable: String {
         var format = "yyyy-MM-dd HH:mm"
         let currentDate: Date = Date()
-        if currentDate.sameDay(with: self) == true {
+        if currentDate.sameSecond(with: self) {
+            return "刚刚"
+        } else if currentDate.sameMinute(with: self) {
+            return "\(currentDate.second - self.second) 秒前"
+        } else if currentDate.sameHour(with: self) {
+            return "\(currentDate.minute - self.minute) 分钟前"
+        } else if currentDate.sameDay(with: self) == true {
             format = "HH:mm"
         } else if currentDate.sameYear(with: self) {
             format = "MM-dd HH:mm"
@@ -179,55 +185,35 @@ public extension Date {
     }
     
     var isThisYear: Bool {
-        return sameYear(with: Date())
+        return isThisEra && sameYear(with: Date())
     }
     
     var isThisMonth: Bool {
-        return sameMonth(with: Date())
+        return isThisYear && sameMonth(with: Date())
     }
     
     var isThisDay: Bool {
-        return sameDay(with: Date())
+        return isThisMonth && sameDay(with: Date())
     }
     
     var isThisHour: Bool {
-        return sameHour(with: Date())
+        return isThisDay && sameHour(with: Date())
     }
     
     var isThisMinute: Bool {
-        return sameMinute(with: Date())
+        return isThisHour && sameMinute(with: Date())
     }
     
     var isThisSecond: Bool {
-        return sameSecond(with: Date())
-    }
-    
-    var isThisWeekday: Bool {
-        return sameWeekday(with: Date())
-    }
-    
-    var isThisWeekdayOrdinal: Bool {
-        return sameWeekdayOrdinal(with: Date())
+        return isThisMinute && sameSecond(with: Date())
     }
     
     var isThisQuarter: Bool {
-        return sameQuarter(with: Date())
-    }
-    
-    var isThisWeekOfMonth: Bool {
-        return sameWeekOfMonth(with: Date())
-    }
-    
-    var isThisWeekOfYear: Bool {
-        return sameWeekOfYear(with: Date())
-    }
-    
-    var isThisYearForWeekOfYear: Bool {
-        return sameYearForWeekOfYear(with: Date())
+        return isThisHour && sameQuarter(with: Date())
     }
     
     var isThisNanosecond: Bool {
-        return sameNanosecond(with: Date())
+        return isThisSecond && sameNanosecond(with: Date())
     }
 }
 
