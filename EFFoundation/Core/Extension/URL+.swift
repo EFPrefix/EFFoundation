@@ -10,7 +10,7 @@ import Foundation
 public extension URL {
 
     init?(unexpectedString: String?) {
-        if let tryString = unexpectedString?.clean {
+        if let tryString = unexpectedString?.trimming {
             if nil != URL(string: tryString) {
                 self.init(string: tryString)
             } else {

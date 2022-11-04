@@ -3,16 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		12AAF2B9238BE54C00E793D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AAF2B8238BE54C00E793D8 /* AppDelegate.swift */; };
 		12AAF2BB238BE54C00E793D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AAF2BA238BE54C00E793D8 /* SceneDelegate.swift */; };
 		12AAF2BD238BE54C00E793D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AAF2BC238BE54C00E793D8 /* ViewController.swift */; };
-		12AAF2C0238BE54C00E793D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AAF2BE238BE54C00E793D8 /* Main.storyboard */; };
 		12AAF2C2238BE54D00E793D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12AAF2C1238BE54D00E793D8 /* Assets.xcassets */; };
-		12AAF2C5238BE54D00E793D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AAF2C3238BE54D00E793D8 /* LaunchScreen.storyboard */; };
 		DDA55A4518EBFEE222C70F6A /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740C40728DAF9C6D060366D3 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,9 +19,7 @@
 		12AAF2B8238BE54C00E793D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12AAF2BA238BE54C00E793D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		12AAF2BC238BE54C00E793D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		12AAF2BF238BE54C00E793D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12AAF2C1238BE54D00E793D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		12AAF2C4238BE54D00E793D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12AAF2C6238BE54D00E793D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27FEED803B14B15189D2010F /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		3BE1362B1B4A7B3317697A11 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,9 +62,7 @@
 				12AAF2B8238BE54C00E793D8 /* AppDelegate.swift */,
 				12AAF2BA238BE54C00E793D8 /* SceneDelegate.swift */,
 				12AAF2BC238BE54C00E793D8 /* ViewController.swift */,
-				12AAF2BE238BE54C00E793D8 /* Main.storyboard */,
 				12AAF2C1238BE54D00E793D8 /* Assets.xcassets */,
-				12AAF2C3238BE54D00E793D8 /* LaunchScreen.storyboard */,
 				12AAF2C6238BE54D00E793D8 /* Info.plist */,
 			);
 			path = Example;
@@ -80,7 +74,6 @@
 				3BE1362B1B4A7B3317697A11 /* Pods-Example.debug.xcconfig */,
 				27FEED803B14B15189D2010F /* Pods-Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,9 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12AAF2C5238BE54D00E793D8 /* LaunchScreen.storyboard in Resources */,
 				12AAF2C2238BE54D00E793D8 /* Assets.xcassets in Resources */,
-				12AAF2C0238BE54C00E793D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,25 +205,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		12AAF2BE238BE54C00E793D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12AAF2BF238BE54C00E793D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		12AAF2C3238BE54D00E793D8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12AAF2C4238BE54D00E793D8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		12AAF2C7238BE54D00E793D8 /* Debug */ = {
@@ -362,6 +334,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.eyrefree.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,6 +355,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.eyrefree.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

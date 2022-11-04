@@ -2,6 +2,14 @@
 
 -----
 
+## [1.5.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.0) (2022-11-04)
+
+- Remove Attributes, Device and Reachability;
+- Update MinimumOSVersion;
+- Fix Cartfile.
+
+---
+
 ## [1.4.11](https://github.com/EFPrefix/EFFoundation/releases/tag/1.4.11) (2021-06-30)
 
 * Fix SPM.

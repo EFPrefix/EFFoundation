@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import Foundation
 
 #if os(iOS)
 import UIKit
@@ -20,4 +21,8 @@ public extension CGFloat {
     #endif
 
     static let navigationBarHeight: CGFloat = 44
+    
+    var nsNumber: NSNumber {
+        return NSNumber(value: self)
+    }
 }

@@ -29,12 +29,12 @@ import PackageDescription
 
 let package = Package(
     name: "EFFoundation",
-    platforms: [.iOS(.v9), .macOS(.v10_11), .tvOS(.v9), .watchOS(.v2)],
+    platforms: [.iOS(.v11), .macOS(.v10_13), .tvOS(.v11), .watchOS(.v6)],
     products: [
         .library(name: "EFFoundation", targets: ["EFFoundation"])
     ],
     targets: [
-        .target(name: "EFFoundation", path: "EFFoundation", exclude: ["EFFoundation.h", "Info.plist", "Info-tvOS.plist"])
+        .target(name: "EFFoundation", path: "EFFoundation/Core", exclude: ["EFFoundation.h", "Info.plist", "Info-tvOS.plist"])
     ],
     swiftLanguageVersions: [.v5]
 )

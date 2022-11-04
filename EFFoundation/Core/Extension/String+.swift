@@ -23,7 +23,7 @@ public extension String {
     }
     
     var bool: Bool? {
-        switch self.clean.lowercased() {
+        switch self.trimming?.lowercased() {
         case "true", "yes", "1":
             return true
         case "false", "no", "0":
@@ -89,8 +89,9 @@ public extension String {
 
 public extension String {
     
-    var clean: String {
-        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    var trimming: String? {
+        let trimWhitespacesAndNewlines: String = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return trimWhitespacesAndNewlines.isEmpty ? nil : trimWhitespacesAndNewlines
     }
     
     func replace(_ string: String, with: String, options: String.CompareOptions = [], range: Range<String.Index>? = nil) -> String {
@@ -149,9 +150,9 @@ public extension String {
         return nil
     }
     
-    func date(format: String = "yyyy-MM-dd HH:mm") -> Date? {
+    func date(dateFormat: String = "yyyy-MM-dd HH:mm", timeZone: TimeZone = NSTimeZone.local, locale: Locale = Locale.current) -> Date? {
         let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
+        dateFormatter.dateFormat = dateFormat
         dateFormatter.timeZone = NSTimeZone.local
         dateFormatter.locale = Locale.current
         return dateFormatter.date(from: self)

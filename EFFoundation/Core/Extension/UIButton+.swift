@@ -13,7 +13,7 @@ public extension UIButton {
         setTitle(title, for: UIControl.State.normal)
     }
     
-    open func setTitleColor(_ color: UIColor?) {
+    func setTitleColor(_ color: UIColor?) {
         setTitleColor(color, for: UIControl.State.normal)
     }
     
@@ -21,7 +21,7 @@ public extension UIButton {
         setTitleShadowColor(color, for: UIControl.State.normal)
     }
     
-    open func setImage(_ image: UIImage?) {
+    func setImage(_ image: UIImage?) {
         setImage(image, for: UIControl.State.normal)
     }
     
