@@ -2,6 +2,12 @@
 
 -----
 
+## [1.5.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.2) (2022-11-06)
+
+- Fix conflicts with `CoreGraphics`.
+
+---
+
 ## [1.5.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.1) (2022-11-05)
 
 - Fix conflicts with `CoreGraphics`.
