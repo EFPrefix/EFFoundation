@@ -17,8 +17,9 @@ class ViewController: UIViewController {
         
         printLog("2333")
         printLog(1 + 2)
-        let bottom = CGFloat.infinity
-        printLog("infinity:\(bottom)")
+        var xxx = CGRect.zero
+        xxx.center = CGPoint.zero
+        printLog("xxx:\(xxx)")
     }
 
 

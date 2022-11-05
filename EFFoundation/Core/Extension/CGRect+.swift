@@ -31,24 +31,6 @@ public extension CGRect {
         }
     }
     
-    var width: CGFloat {
-        get {
-            return self.size.width
-        }
-        set {
-            self = CGRect(x: self.x, y: self.y, width: newValue, height: self.height)
-        }
-    }
-    
-    var height: CGFloat {
-        get {
-            return self.size.height
-        }
-        set {
-            self = CGRect(x: self.x, y: self.y, width: self.width, height: newValue)
-        }
-    }
-    
     var top: CGFloat {
         get {
             return self.origin.y
@@ -82,24 +64,6 @@ public extension CGRect {
         }
         set {
             self = CGRect(x: newValue - width, y: y, width: width, height: height)
-        }
-    }
-    
-    var midX: CGFloat {
-        get {
-            return self.x + self.width / 2
-        }
-        set {
-            self = CGRect(x: newValue - width / 2, y: y, width: width, height: height)
-        }
-    }
-    
-    var midY: CGFloat {
-        get {
-            return self.y + self.height / 2
-        }
-        set {
-            self = CGRect(x: x, y: newValue - height / 2, width: width, height: height)
         }
     }
     
