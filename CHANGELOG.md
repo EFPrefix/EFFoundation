@@ -2,6 +2,10 @@
 
 -----
 
+## [1.5.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.3) (2023-02-08)
+
+- Fix `TimeInterval+`.
+
 ## [1.5.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.2) (2022-11-06)
 
 - Fix conflicts with `CoreGraphics`.

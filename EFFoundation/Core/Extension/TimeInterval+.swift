@@ -11,19 +11,19 @@ public extension TimeInterval {
     
     // BinaryInteger
     static func week<T: BinaryInteger>(_ count: T) -> TimeInterval {
-        return second(604800)
+        return second(604800 * count)
     }
 
     static func day<T: BinaryInteger>(_ count: T) -> TimeInterval {
-        return second(86400)
+        return second(86400 * count)
     }
 
     static func hour<T: BinaryInteger>(_ count: T) -> TimeInterval {
-        return second(3600)
+        return second(3600 * count)
     }
 
     static func minute<T: BinaryInteger>(_ count: T) -> TimeInterval {
-        return second(60)
+        return second(60 * count)
     }
 
     static func second<T: BinaryInteger>(_ count: T) -> TimeInterval {
@@ -32,19 +32,19 @@ public extension TimeInterval {
     
     // BinaryFloatingPoint
     static func week<T: BinaryFloatingPoint>(_ count: T) -> TimeInterval {
-        return second(604800)
+        return second(604800 * count)
     }
 
     static func day<T: BinaryFloatingPoint>(_ count: T) -> TimeInterval {
-        return second(86400)
+        return second(86400 * count)
     }
 
     static func hour<T: BinaryFloatingPoint>(_ count: T) -> TimeInterval {
-        return second(3600)
+        return second(3600 * count)
     }
 
     static func minute<T: BinaryFloatingPoint>(_ count: T) -> TimeInterval {
-        return second(60)
+        return second(60 * count)
     }
 
     static func second<T: BinaryFloatingPoint>(_ count: T) -> TimeInterval {

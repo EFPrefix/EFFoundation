@@ -28,6 +28,7 @@
 		128AD85F20C4075A006CED36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		12C5587D291569910080F3A3 /* Extension */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Extension; path = EFFoundation/Core/Extension; sourceTree = "<group>"; };
 		12C5587E291569910080F3A3 /* DataStructure */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataStructure; path = EFFoundation/Core/DataStructure; sourceTree = "<group>"; };
+		12CD4C742993EEFB0055E75C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		4CF626EF1BA7CB3E0011A099 /* EFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD67C0B1A5C55C900ED2280 /* EFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5282BCAD1FF38F8100DFB36B /* EFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +97,7 @@
 		F8111E2919A95C8B0040E7D1 = {
 			isa = PBXGroup;
 			children = (
+				12CD4C742993EEFB0055E75C /* CHANGELOG.md */,
 				128AD85F20C4075A006CED36 /* README.md */,
 				127F871E1ECF56AC0002B554 /* EFFoundation.podspec */,
 				12637553234C868100F87737 /* Core */,
