@@ -215,3 +215,8 @@ public extension String {
         return nil
     }
 }
+
+// throw errors using strings
+extension String: LocalizedError {
+    public var errorDescription: String? { return self }
+}

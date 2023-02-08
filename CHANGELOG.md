@@ -2,6 +2,10 @@
 
 -----
 
+## [1.5.4](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.4) (2023-02-09)
+
+- Add string error.
+
 ## [1.5.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.3) (2023-02-08)
 
 - Fix `TimeInterval+`.
