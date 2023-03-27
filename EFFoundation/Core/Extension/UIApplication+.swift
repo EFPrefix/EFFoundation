@@ -23,17 +23,17 @@ public extension UIApplication {
         return isAppExtension
     }()
     
-    static let shared: UIApplication? = {
+    static func shared() -> UIApplication? {
         if isAppExtension {
             return nil
         }
         let selector = NSSelectorFromString("sharedApplication")
         guard UIApplication.responds(to: selector) else { return nil }
         return UIApplication.perform(selector).takeUnretainedValue() as? UIApplication
-    }()
+    }
     
     func keyWindow() -> UIWindow? {
-        guard let currentApplication = UIApplication.shared else { return nil }
+        let currentApplication = self
         var targetWindow = currentApplication.keyWindow
         if #available(iOS 13.0, tvOS 13.0, *) {
             let scenes = currentApplication.connectedScenes.filter({ $0.activationState == .foregroundActive })

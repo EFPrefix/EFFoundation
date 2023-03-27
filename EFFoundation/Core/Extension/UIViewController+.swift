@@ -10,15 +10,19 @@ import UIKit
 
 public extension UIViewController {
     
-    var topViewController: UIViewController {
-        return presentedViewController?.topViewController
+    static var rootViewController: UIViewController? {
+        return UIApplication.shared()?.keyWindow()?.rootViewController
+    }
+    
+    static var topViewController: UIViewController? {
+        return UIApplication.shared()?.keyWindow()?.rootViewController?.topViewController
+    }
+    
+    private var topViewController: UIViewController {
+        return self.presentedViewController?.topViewController
             ?? (self as? UITabBarController)?.selectedViewController?.topViewController
             ?? (self as? UINavigationController)?.visibleViewController?.topViewController
             ?? self
-    }
-    
-    static var topViewController: UIViewController {
-        return UIApplication.shared?.delegate?.window??.rootViewController?.topViewController ?? UIViewController()
     }
     
     func goBack(animated: Bool, completion: (() -> Void)? = nil) {
@@ -29,6 +33,8 @@ public extension UIViewController {
             }
         } else if nil != self.presentingViewController {
             self.dismiss(animated: animated, completion: completion)
+        } else {
+            printLog("No need to goBack.")
         }
     }
 }

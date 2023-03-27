@@ -12,8 +12,8 @@ public extension Date {
     func string(dateFormat: String = "yyyy-MM-dd HH:mm", timeZone: TimeZone = NSTimeZone.local, locale: Locale = Locale.current) -> String {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        dateFormatter.timeZone = NSTimeZone.local
-        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = timeZone
+        dateFormatter.locale = locale
         return dateFormatter.string(from: self)
     }
     

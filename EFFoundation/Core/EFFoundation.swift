@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 public func hideKeyboard() {
-    UIApplication.shared?.keyWindow?.endEditing(true)
+    UIApplication.shared()?.keyWindow()?.endEditing(true)
 }
 #endif
 #endif
