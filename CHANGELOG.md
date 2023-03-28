@@ -2,13 +2,29 @@
 
 -----
 
+## [1.7.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.7.0) (2023-03-28)
+
+- Remove something.
+
+---
+
+## [1.6.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.6.0) (2023-03-28)
+
+- Bugfix.
+
+---
+
 ## [1.5.4](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.4) (2023-02-09)
 
 - Add string error.
 
+---
+
 ## [1.5.3](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.3) (2023-02-08)
 
 - Fix `TimeInterval+`.
+
+---
 
 ## [1.5.2](https://github.com/EFPrefix/EFFoundation/releases/tag/1.5.2) (2022-11-06)
 
