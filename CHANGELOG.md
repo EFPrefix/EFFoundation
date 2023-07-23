@@ -2,6 +2,12 @@
 
 -----
 
+## [1.7.1](https://github.com/EFPrefix/EFFoundation/releases/tag/1.7.1) (2023-07-23)
+
+- Fix SPM.
+
+---
+
 ## [1.7.0](https://github.com/EFPrefix/EFFoundation/releases/tag/1.7.0) (2023-03-28)
 
 - Remove something.
