@@ -7,24 +7,30 @@
 
 #if os(iOS)
 import UIKit
+import ObjectiveC
 
 public extension UIControl {
     
     private typealias BlockDictType = [UInt: ((UIControl) -> Void)?]
-    private struct AssociatedKeys {
-        static var blockDict: String = "blockDict"
+
+    private struct AssociatedKeysSingleton {
+        static let shared = AssociatedKeysSingleton()
+        let blockDictKey = "blockDict"
     }
+    
     private var blockDict: BlockDictType {
         get {
-            if let dict = objc_getAssociatedObject(self, &AssociatedKeys.blockDict) as? BlockDictType {
+            let key = AssociatedKeysSingleton.shared.blockDictKey
+            if let dict = objc_getAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!) as? BlockDictType {
                 return dict
             }
             let newDict = BlockDictType()
-            objc_setAssociatedObject(self, &AssociatedKeys.blockDict, newDict, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!, newDict, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return newDict
         }
         set {
-            objc_setAssociatedObject(self, &AssociatedKeys.blockDict, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            let key = AssociatedKeysSingleton.shared.blockDictKey
+            objc_setAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 

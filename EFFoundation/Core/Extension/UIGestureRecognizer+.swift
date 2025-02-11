@@ -7,19 +7,22 @@
 
 #if os(iOS)
 import UIKit
+import ObjectiveC
 
-fileprivate struct AssociatedObjectKeys {
-    static var gestureRecognizerBlockKey: String = "gestureRecognizerBlockKey"
+private struct AssociatedObjectKeySingleton {
+    static let shared = AssociatedObjectKeySingleton()
+    let gestureRecognizerBlockKey = "gestureRecognizerBlockKey"
 }
 
 public extension UIGestureRecognizer {
-
     private var gestureRecognizerBlock: ((UIGestureRecognizer) -> Void)? {
         get {
-            return objc_getAssociatedObject(self, &AssociatedObjectKeys.gestureRecognizerBlockKey) as? ((UIGestureRecognizer) -> Void)
+            let key = AssociatedObjectKeySingleton.shared.gestureRecognizerBlockKey
+            return objc_getAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!) as? ((UIGestureRecognizer) -> Void)
         }
         set {
-            objc_setAssociatedObject(self, &AssociatedObjectKeys.gestureRecognizerBlockKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            let key = AssociatedObjectKeySingleton.shared.gestureRecognizerBlockKey
+            objc_setAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
@@ -34,7 +37,7 @@ public extension UIGestureRecognizer {
 
     func addAction(_ action: ((UIGestureRecognizer) -> Void)?) {
         gestureRecognizerBlock = action
-        if nil == action {
+        if action == nil {
             removeTarget(self, action: #selector(callGestureRecognizerBlock))
         } else {
             addTarget(self, action: #selector(callGestureRecognizerBlock))

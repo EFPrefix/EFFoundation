@@ -10,7 +10,7 @@ import UIKit
 
 public extension CGSize {
     
-    static let screen: CGSize = UIScreen.main.bounds.size
+    @MainActor static let screen: CGSize = UIScreen.main.bounds.size
     
     init(length: CGFloat) {
         self.init(width: length, height: length)

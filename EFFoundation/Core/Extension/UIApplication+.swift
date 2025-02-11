@@ -7,20 +7,16 @@
 
 import Foundation
 
-#if !os(macOS) && !os(watchOS)
+#if os(iOS) || os(tvOS)
 #if canImport(UIKit)
 import UIKit
 
 public extension UIApplication {
     
     static let isAppExtension: Bool = {
-        var isAppExtension: Bool = false
-        DispatchQueue.once {
-            let bundleUrl: URL = Bundle.main.bundleURL
-            let bundlePathExtension: String = bundleUrl.pathExtension
-            isAppExtension = bundlePathExtension == "appex"
-        }
-        return isAppExtension
+        let bundleUrl: URL = Bundle.main.bundleURL
+        let bundlePathExtension: String = bundleUrl.pathExtension
+        return bundlePathExtension == "appex"
     }()
     
     static func shared() -> UIApplication? {

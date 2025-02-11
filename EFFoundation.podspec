@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFFoundation'
-  s.version          = '1.7.1'
+  s.version          = '6.0.0.0'
   s.summary          = 'EFFoundation.'
   
   s.description      = <<-DESC
@@ -14,14 +14,15 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/EFPrefix/EFFoundation.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/EyreFree777'
   
-  s.swift_version = '5.0'
+  s.swift_version = '6.0'
   s.default_subspec = 'Core'
   s.frameworks = 'Foundation'
   
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.osx.deployment_target = '10.13'
-  s.tvos.deployment_target = '11.0'
+  s.tvos.deployment_target = '12.0'
   s.watchos.deployment_target = '6.0'
+  s.visionos.deployment_target = '1.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'EFFoundation/Core/**/*.{h,swift}'

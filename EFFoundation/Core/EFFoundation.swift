@@ -7,11 +7,11 @@
 
 import Foundation
 
-#if !os(macOS) && !os(watchOS)
+#if os(iOS) || os(tvOS)
 #if canImport(UIKit)
 import UIKit
 
-public func hideKeyboard() {
+@MainActor public func hideKeyboard() {
     UIApplication.shared()?.keyWindow()?.endEditing(true)
 }
 #endif

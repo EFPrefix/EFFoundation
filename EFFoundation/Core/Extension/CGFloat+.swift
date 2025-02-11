@@ -15,9 +15,10 @@ import UIKit
 public extension CGFloat {
 
     #if os(iOS)
-    static let screenWidth: CGFloat = UIScreen.main.bounds.size.width
-    static let screenHeight: CGFloat = UIScreen.main.bounds.size.height
-    static let screenMinEdge: CGFloat = Swift.min(screenWidth, screenHeight)
+    @MainActor static let screenWidth: CGFloat = UIScreen.main.bounds.size.width
+    @MainActor static let screenHeight: CGFloat = UIScreen.main.bounds.size.height
+    @MainActor static let screenMinEdge: CGFloat = Swift.min(screenWidth, screenHeight)
+    @MainActor static let screenMaxEdge: CGFloat = Swift.max(screenWidth, screenHeight)
     #endif
     
     var nsNumber: NSNumber {
