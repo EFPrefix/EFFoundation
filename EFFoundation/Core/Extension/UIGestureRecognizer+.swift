@@ -7,22 +7,18 @@
 
 #if os(iOS)
 import UIKit
-import ObjectiveC
 
-private struct AssociatedObjectKeySingleton {
-    static let shared = AssociatedObjectKeySingleton()
-    let gestureRecognizerBlockKey = "gestureRecognizerBlockKey"
+fileprivate struct AssociatedObjectKeys {
+    nonisolated(unsafe) static var gestureRecognizerBlockKey: String = "gestureRecognizerBlockKey"
 }
 
 public extension UIGestureRecognizer {
     private var gestureRecognizerBlock: ((UIGestureRecognizer) -> Void)? {
         get {
-            let key = AssociatedObjectKeySingleton.shared.gestureRecognizerBlockKey
-            return objc_getAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!) as? ((UIGestureRecognizer) -> Void)
+            return objc_getAssociatedObject(self, &AssociatedObjectKeys.gestureRecognizerBlockKey) as? ((UIGestureRecognizer) -> Void)
         }
         set {
-            let key = AssociatedObjectKeySingleton.shared.gestureRecognizerBlockKey
-            objc_setAssociatedObject(self, UnsafeRawPointer(bitPattern: key.hashValue)!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedObjectKeys.gestureRecognizerBlockKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 

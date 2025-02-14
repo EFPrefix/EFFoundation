@@ -1,7 +1,7 @@
 PODS:
-  - EFFoundation (6.0.0.0):
-    - EFFoundation/Core (= 6.0.0.0)
-  - EFFoundation/Core (6.0.0.0)
+  - EFFoundation (6.0.0.1):
+    - EFFoundation/Core (= 6.0.0.1)
+  - EFFoundation/Core (6.0.0.1)
 
 DEPENDENCIES:
   - EFFoundation (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EFFoundation: 553ec082ffbb8055e693be9e5a487f387f4764c5
+  EFFoundation: 3c1ed07a50c64ee3f76f7982b8291ac8b127010f
 
 PODFILE CHECKSUM: a1863cde97b37c7517483a35c69768c0720851b0
 
